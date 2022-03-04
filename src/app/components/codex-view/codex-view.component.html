@@ -1,0 +1,188 @@
+<div id="codexView" *ngIf="activeUnit && !activeUnit.uuid">
+    <div class="row g-0 m-auto p-4 w-80r">
+        <div class="col-8">
+            <h1 class="mb-0">
+                <ng-container [ngSwitch]="activeUnit.role">
+                    <span *ngSwitchCase="'HQ'" class="icon text-center"><i class="fas fa-skull"></i></span>
+                    <span *ngSwitchCase="'TROOPS'" class="icon text-center"><i class="fas fa-play"></i></span>
+                    <span *ngSwitchCase="'ELITES'" class="icon text-center"><i class="fas fa-trophy"></i></span>
+                    <span *ngSwitchCase="'FAST ATTACK'" class="icon text-center"><i class="fas fa-bolt"></i></span>
+                    <span *ngSwitchCase="'HEAVY SUPPORT'" class="icon text-center"><i class="fas fa-fire"></i></span>
+                    <span *ngSwitchCase="'AIRCRAFT'" class="icon text-center"><i class="fas fa-plane"></i></span>
+                    <span *ngSwitchCase="'TRANSPORT'" class="icon text-center"><i class="fas fa-truck-moving"></i></span>
+                    <span *ngSwitchCase="'FORTIFICATION'" class="icon text-center"><i class="fas fa-archway"></i></span>
+                </ng-container>
+                {{activeUnit.name | uppercase}}
+            </h1>
+        </div>
+        <div class="col text-end">
+            <h1 class="mb-0">{{calculatePoints(activeUnit)}}<span class="ps-2">POINTS</span></h1>
+        </div>
+        <div class="col text-end">
+            <h1 class="mb-0">{{activeUnit.power}}<span class="ps-2">POWER</span></h1>
+        </div>
+        <div class="col text-end">
+            <button class="btn add" (click)="addUnit(army.detachments[detachmentIndex], activeUnit)">ADD</button>
+        </div>
+
+    </div>
+    <div class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="text-center">
+                <th scope="col" class="w-6">#</th>
+                <th scope="col" class="text-start">NAME</th>
+                <th scope="col" class="w-6">M</th>
+                <th scope="col" class="w-6">WS</th>
+                <th scope="col" class="w-6">BS</th>
+                <th scope="col" class="w-6">S</th>
+                <th scope="col" class="w-6">T</th>
+                <th scope="col" class="w-6">W</th>
+                <th scope="col" class="w-6">A</th>
+                <th scope="col" class="w-6">Ld</th>
+                <th scope="col" class="w-6">Sv</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let statistic of activeUnit.statistics; let odd = odd" [class.odd]="odd"
+                class="text-center">
+                <td class="w-6">{{statistic.numberMax === 1 ? statistic.numberMax : statistic.numberMin + '-' + statistic.numberMax}}</td>
+                <td class="text-start">{{statistic.name}}</td>
+                <td class="w-6">{{statistic.movement}}"</td>
+                <td class="w-6">{{statistic.weaponSkill}}+</td>
+                <td class="w-6">{{statistic.ballisticSkill}}+</td>
+                <td class="w-6">{{statistic.strength}}</td>
+                <td class="w-6">{{statistic.toughness}}</td>
+                <td class="w-6">{{statistic.wounds}}</td>
+                <td class="w-6">{{statistic.attacks}}</td>
+                <td class="w-6">{{statistic.leadership}}</td>
+                <td class="w-6">{{statistic.save}}+</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row g-0 m-auto p-3 w-80r">
+        <p>{{activeUnit.description}}</p>
+    </div>
+    <div *ngIf="activeUnit.weapons" class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="text-center">
+                <th scope="col" class="text-start">WEAPON</th>
+                <th scope="col">RANGE</th>
+                <th scope="col">TYPE</th>
+                <th scope="col">S</th>
+                <th scope="col">AP</th>
+                <th scope="col">D</th>
+                <th scope="col" class="text-start">ABILITIES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <ng-container *ngFor="let id of activeUnit.weapons; let odd = odd">
+                <tr *ngIf="!weapon(activeUnit.codex, id).profile" [class.odd]="odd" class="text-center">
+                    <td class="text-start">{{weapon(activeUnit.codex, id).name}}</td>
+                    <td>{{weapon(activeUnit.codex, id).range === 0 ? 'Melee' : weapon(activeUnit.codex, id).range + '"'}}</td>
+                    <td>{{weapon(activeUnit.codex, id).type}}</td>
+                    <td>{{weapon(activeUnit.codex, id).strength}}</td>
+                    <td>{{weapon(activeUnit.codex, id).armourPiercing}}</td>
+                    <td>{{weapon(activeUnit.codex, id).damage}}</td>
+                    <td class="text-start">{{weapon(activeUnit.codex, id).abilities}}</td>
+                </tr>
+                <ng-container *ngIf="weapon(activeUnit.codex, id).profile">
+                    <tr [class.odd]="odd" class="text-center">
+                        <td class="text-start">{{weapon(activeUnit.codex, id).name}}</td>
+                        <td colspan="6">{{weapon(activeUnit.codex, id).description}}</td>
+                    </tr>
+                    <tr *ngFor="let profile of weapon(activeUnit.codex, id).profile" [class.odd]="odd" class="text-center">
+                        <td class="text-start">{{profile.name}}</td>
+                        <td>{{profile.range === 0 ? 'Melee' : profile.range + '"'}}</td>
+                        <td>{{profile.type}}</td>
+                        <td>{{profile.strength}}</td>
+                        <td>{{profile.armourPiercing}}</td>
+                        <td>{{profile.damage}}</td>
+                        <td class="text-start">{{profile.abilities}}</td>
+                    </tr>
+                </ng-container>
+            </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="activeUnit.otherWargear" class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-borderless">
+            <thead>
+            <tr>
+                <th scope="col" class="w-20">OTHER WARGEAR</th>
+                <th scope="col">ABILITIES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let otherWargear of activeUnit.otherWargear" class="">
+                <td class="w-20">{{otherWargear.name}}</td>
+                <td>{{otherWargear.rule}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="activeUnit.wargearOptions" class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-borderless">
+            <thead>
+            <tr>
+                <th scope="col">WARGEAR OPTIONS</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let wargearOptions of activeUnit.wargearOptions" class="">
+                <td>{{wargearOptions}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="activeUnit.psyker" class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-borderless">
+            <thead>
+            <tr>
+                <th scope="col">PSYKER</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{activeUnit.psyker.description}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="activeUnit.abilities" class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-borderless">
+            <thead>
+            <tr>
+                <th scope="col">ABILITIES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let abilities of activeUnit.abilities">
+                <td><span class="bolder">{{abilities.name}}</span>: {{abilities.rule}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row g-0 m-auto p-3 w-80r">
+        <table class="table table-borderless">
+            <tbody>
+            <tr>
+                <td>
+                    <span class="pe-2">FACTION KEYWORDS: </span>
+                    <span class="bolder pe-2"
+                          *ngFor="let keyword of activeUnit.factionKeywords; let last = last">{{keyword}}{{last ? '' : ', '}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="pe-2">KEYWORDS: </span>
+                    <span class="bolder pe-2"
+                          *ngFor="let keyword of activeUnit.keywords; let last = last">{{keyword}}{{last ? '' : ', '}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

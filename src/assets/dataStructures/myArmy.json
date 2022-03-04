@@ -1,0 +1,22 @@
+{
+    "name": "The Aggressive Aardvarks",
+    "battleSize": {
+        "name": "Strike Force",
+        "commandPoints": 12,
+        "points": 2000
+    },
+    "detachments": [
+        {
+            "armyType": {
+                "name": "Thousand Sons",
+                "faction": "Chaos",
+                "fileName": "thousandSons.json"
+            },
+            "detachmentType": {
+                "name": "Patrol",
+                "subFaction": ""
+            },
+            "units": []
+        }
+    ]
+}

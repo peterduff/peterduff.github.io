@@ -1,0 +1,136 @@
+@import '~src/styles.scss';
+
+nav#army-bar {
+    position: fixed;
+
+    div.army-bar {
+        background: $alto-white;
+        right: 0;
+        top: 8rem;
+        width: calc(50vw - 16rem);
+        height: 100vh;
+        overflow: auto;
+
+        h3 {
+            span {
+                font-size: 1.4rem;
+                color: $blumine;
+
+                &.red {
+                    color: $mandy;
+                }
+
+                &.green {
+                    color: $fruit-salad;
+                }
+            }
+        }
+
+        div.detachment {
+            border-bottom: solid 1px $ghost-grey;
+            background-color: darken($alto-white, 5%);
+
+            button {
+                background-color: darken($alto-white, 10%);
+                color: $bootstrap-black;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                height: 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: $bootstrap-black;
+                }
+
+                &:hover {
+                    background-color: darken($alto-white, 20%);
+                }
+            }
+        }
+
+        div.unit {
+            cursor: pointer;
+
+            div.unit-title {
+                position: relative;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                background-color: darken($alto-white, 10%);
+
+                h4 {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    max-width: 80%;
+
+                    span {
+                        color: $blumine;
+
+                        &.icon {
+                            i {
+                                width: 1.8rem;
+                                padding-right: 1rem;
+                            }
+                        }
+                    }
+                }
+
+                button.clone {
+                    position: absolute;
+                    top: 0;
+                    right: 2rem;
+                    height: 2.8rem;
+                    color: lighten($slate-grey, 10%);
+                    background-color: transparent;
+                }
+
+                button.delete {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 2.8rem;
+                    color: $mandy;
+                    background-color: transparent;
+                }
+            }
+
+            div.unit-description {
+                border-bottom-left-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                background-color: darken($alto-white, 5%);
+                min-height: 3.1rem;
+                position: relative;
+
+                div {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+
+                    div.item {
+                        div.cell-count {
+                            background-color: $alto-white;
+                            border-top-left-radius: 0.4rem;
+                            border-bottom-left-radius: 0.4rem;
+                            display: inline-block;
+                            min-width: 2.4rem;
+                        }
+
+                        div.cell {
+                            border-top-right-radius: 0.4rem;
+                            border-bottom-right-radius: 0.4rem;
+                            background-color: lighten($alto-white, 5%);
+                            display: inline-block;
+                        }
+                    }
+
+                    &.points {
+                        position: absolute;
+                        color: $fruit-salad;
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

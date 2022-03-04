@@ -1,0 +1,91 @@
+<nav *ngIf="army" id="codex-bar">
+    <div class="position-fixed codex-bar">
+        <div class="row border-0 g-0">
+            <div class="col">
+                <h3 class="p-3 mb-0">{{army.detachments.length}} Detachment{{army.detachments.length > 1 ? 's' : ''}}</h3>
+            </div>
+            <div class="col-3 text-end">
+                <button class="btn m-2" (click)="openModal('edit-modal')"><i class="fas fa-cogs"></i></button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="search" class="searchbar py-2 px-3" [(ngModel)]="textFilter" placeholder="Search...">
+        </div>
+        <ng-container *ngFor="let detachment of army.detachments; let index = index">
+            <ng-container *ngIf="findCodex(detachment.armyType.name)">
+                <div class="row detachment border-0 g-0">
+                    <div class="col">
+                        <h3 class="p-3 mb-0">{{detachment.armyType.name}} <span class="ps-1">{{detachment.detachmentType.name}}</span></h3>
+                    </div>
+                    <div class="col-3 text-end">
+                        <h3 class="p-3 mb-0"><span></span></h3>
+                    </div>
+                </div>
+                <div *ngFor="let unit of findCodex(detachment.armyType.name).units | textFilter:textFilter" class="row g-0 unit"
+                     [class.active]="(activeUnit?.id === unit?.id) && (!activeUnit?.uuid) && (index === detachmentIndex)" (click)="setActiveUnit(unit); setDetachmentIndex(index)">
+                    <div class="col border-0 p-2">
+                        <ng-container [ngSwitch]="unit.role">
+                            <span *ngSwitchCase="'HQ'" class="icon text-center"><i class="fas fa-skull"></i></span>
+                            <span *ngSwitchCase="'TROOPS'" class="icon text-center"><i class="fas fa-play"></i></span>
+                            <span *ngSwitchCase="'ELITES'" class="icon text-center"><i class="fas fa-trophy"></i></span>
+                            <span *ngSwitchCase="'FAST ATTACK'" class="icon text-center"><i class="fas fa-bolt"></i></span>
+                            <span *ngSwitchCase="'HEAVY SUPPORT'" class="icon text-center"><i class="fas fa-fire"></i></span>
+                            <span *ngSwitchCase="'AIRCRAFT'" class="icon text-center"><i class="fas fa-plane"></i></span>
+                            <span *ngSwitchCase="'TRANSPORT'" class="icon text-center"><i class="fas fa-truck-moving"></i></span>
+                            <span *ngSwitchCase="'FORTIFICATION'" class="icon text-center"><i class="fas fa-archway"></i></span>
+                        </ng-container>
+                        {{unit.name}}
+                        <span class="float-end">{{calculatePoints(unit)}}</span>
+                    </div>
+                    <div class="col-1 border-0 py-1 px-2 text-end add" (click)="addUnit(detachment, unit); setDetachmentIndex(index); $event.stopPropagation()">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</nav>
+
+<!-- EDIT MODAL -->
+<app-modal id="edit-modal" class="modal">
+    <div header><h3 class="mb-0">Edit Roster<span class="px-2"></span></h3></div>
+    <div body *ngIf="army">
+        <div class="input-group input-group-lg mb-3">
+            <span class="input-group-text" id="basic-addon1">NAME</span>
+            <input type="text" class="form-control" placeholder="The Aggressive Aardvarks..." [(ngModel)]="army.name">
+        </div>
+        <input type="range" class="form-range" min="0" max="3000" step="100" [(ngModel)]="army.battleSize.points" (ngModelChange)="updateGameSize(army.battleSize.points)" id="pointRange">
+        <p class="text-end">{{army.battleSize.points}} points</p>
+        <p>Detachments<span class="float-end">{{army.battleSize.commandPoints}}CP</span></p>
+        <div class="detachments">
+            <ng-container *ngFor="let detachment of army.detachments; let index = index">
+                <div class="detachment rounded-3 border border-1 border-grey mb-2">
+                    <div class="row g-0">
+                        <div class="col p-2">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.armyType" (ngModelChange)="calculateCP()">
+                                <option *ngFor="let army of core.armies" [ngValue]="army">{{army.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col p-2">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.detachmentType" (ngModelChange)="calculateCP()">
+                                <option *ngFor="let type of core.detachments" [ngValue]="type">{{type.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-1 p-2">
+                            <p class="mb-0">{{detachment.detachmentType.cost}}CP</p>
+                        </div>
+                        <div class="col-1">
+                            <button class="border-0 bg-transparent cross h-100 w-100" (click)="removeDetachment(index)">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="text-end mt-3">
+                <button class="btn add" [disabled]="army.detachments.length >= 3" (click)="addDetachment()">ADD</button>
+            </div>
+        </div>
+    </div>
+    <div footer>
+        <button type="button" class="btn" (click)="closeModal('edit-modal')">CLOSE</button>
+    </div>
+</app-modal>

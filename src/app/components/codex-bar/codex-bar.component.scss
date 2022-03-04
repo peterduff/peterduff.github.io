@@ -1,0 +1,133 @@
+@import '~src/styles.scss';
+
+nav#codex-bar {
+    position: fixed;
+
+    div.codex-bar {
+        background: $alto-white;
+        left: 0;
+        top: 8rem;
+        width: 32rem;
+        height: 100vh;
+        overflow: auto;
+
+        h3 {
+            font-weight: 300;
+
+            span {
+                font-size: 1.2rem;
+                color: $blumine;
+            }
+        }
+
+        div {
+            border-bottom: solid 1px $ghost-grey;
+
+            button {
+                background-color: darken($alto-white, 10%);
+                color: $bootstrap-black;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                height: 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: $bootstrap-black;
+                }
+
+                &:hover {
+                    background-color: darken($alto-white, 20%);
+                }
+            }
+
+            &.detachment {
+                background-color: darken($alto-white, 5%);
+            }
+        }
+
+        input.searchbar {
+            width: 100%;
+            border: none;
+            font-weight: 300;
+        }
+
+        div.unit {
+            font-size: 1.2rem;
+            width: 100%;
+            color: $bootstrap-black;
+            cursor: default;
+
+            span {
+                color: $blumine;
+
+                &.icon {
+                    i {
+                        width: 1.8rem;
+                    }
+                }
+            }
+
+            div.add {
+                color: $fruit-salad;
+                cursor: pointer;
+                font-size: 1.6rem;
+
+                &:hover {
+                    color: lighten($fruit-salad, 10%);
+                }
+            }
+
+            &:hover {
+                background-color: darken($alto-white, 5%);
+            }
+
+            &.active {
+                background-color: $anakiwa;
+
+                &:hover {
+                    background-color: darken($anakiwa, 5%);
+                }
+            }
+        }
+    }
+}
+
+app-modal#edit-modal {
+    div {
+        div.border-grey {
+            border-color: $slate-grey;
+        }
+
+        div.detachments {
+            height: 17.275rem;
+
+            div.detachment {
+                p {
+                    line-height: 2.875rem;
+                }
+
+                button.cross {
+                    font-size: 2.4rem;
+                    color: $mandy;
+
+                    &:hover {
+                        color: darken($mandy, 20%);
+                    }
+                }
+            }
+
+            button.add {
+                background-color: $cerulean;
+                color: $white;
+                font-size: 1.4rem;
+                font-weight: 300;
+
+                &:hover {
+                    background-color: darken($cerulean, 10%);
+                }
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,145 @@
+@import '~src/styles.scss';
+
+div#unitView {
+    margin-left: 32rem;
+    margin-right: calc(50vw - 16rem);
+    margin-top: 4rem;
+    height: calc(100vh - 8rem);
+
+    div {
+        &.w-80r {
+            max-width: 80rem;
+        }
+
+        h1 {
+            font-weight: 300;
+            white-space: nowrap;
+            font-size: 2rem;
+
+            span {
+                font-size: 1.4rem;
+                color: $blumine;
+
+                &.icon {
+                    font-size: 2rem;
+                    color: $slate-grey;
+                }
+            }
+        }
+
+        button {
+            font-size: 1.4rem;
+            color: $white;
+            border-radius: 0.5rem;
+
+            &.remove {
+                background-color: $mandy;
+            }
+        }
+    }
+
+    select.form-select {
+        font-size: 1.4rem;
+    }
+
+
+    table.table {
+        thead {
+            background-color: darken($gallery-white, 5%);
+        }
+
+        tbody {
+            border-top: none;
+        }
+
+        thead, tbody {
+            tr {
+                &.odd {
+                    background-color: $gallery-white;
+                }
+
+                th {
+                    font-weight: 400;
+
+                    button {
+                        font-size: 1.2rem;
+                        line-height: 14px;
+                        font-weight: 300;
+                        height: 21px;
+                        background-color: $fruit-salad;
+
+                        &:hover {
+                            background-color: darken($fruit-salad, 10%);
+                        }
+                    }
+                }
+
+                th, td {
+                    &.w-6 {
+                        width: 6%;
+                    }
+
+                    &.w-30 {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+
+    div.unit {
+        div.unit-title {
+            position: relative;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            background-color: darken($gallery-white, 10%);
+
+            h4 {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                max-width: 90%;
+
+                span {
+                    color: $blumine;
+
+                    &.icon {
+                        i {
+                            width: 1.8rem;
+                            padding-right: 1rem;
+                        }
+                    }
+                }
+            }
+
+            button.clone {
+                position: absolute;
+                top: 0;
+                right: 2rem;
+                height: 2.8rem;
+                color: lighten($slate-grey, 10%);
+                background-color: transparent;
+            }
+
+            button.delete {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 2.8rem;
+                color: $mandy;
+                background-color: transparent;
+            }
+        }
+
+        div.unit-description {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            background-color: darken($gallery-white, 5%);
+
+            select {
+                border-radius: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<nav id="utility-bar" class="navbar sticky-top p-2 pe-2">
+    <div class="input-group w-25">
+        <button class="btn me-2 p-2" (click)="openModal('new-modal')"><i class="fas fa-file pe-2"></i>NEW</button>
+        <button class="btn me-2 p-2" (click)="filePicker.click()"><i class="fas fa-folder-open pe-2"></i>OPEN</button>
+        <input [hidden]="true" #filePicker type="file" (change)="openArmy($event)">
+        <button class="btn me-2 p-2" (click)="saveArmy()" [disabled]="!army"><a [href]="downloadJsonHref" download="{{army?.name}}.json"><i class="fas fa-save pe-2"></i>SAVE</a></button>
+    </div>
+    <div class="input-group w-25 justify-content-center">
+    </div>
+    <div class="input-group w-25 flex-row-reverse">
+        <button class="btn ms-2 p-2" [disabled]="!army"><i class="fas fa-file pe-2"></i>EXPORT</button>
+    </div>
+</nav>
+
+<!-- NEW MODAL -->
+<app-modal id="new-modal" class="modal">
+    <div header><h3 class="mb-0">New Roster<span class="px-2"></span></h3></div>
+    <div body *ngIf="core">
+        <div class="input-group input-group-lg mb-3">
+            <span class="input-group-text" id="basic-addon1">NAME</span>
+            <input type="text" class="form-control" placeholder="The Aggressive Aardvarks..." [(ngModel)]="newArmy.name">
+        </div>
+        <input type="range" class="form-range" min="0" max="3000" step="100" [(ngModel)]="newArmy.battleSize.points" (ngModelChange)="updateGameSize(newArmy.battleSize.points)" id="pointRange">
+        <p class="text-end">{{newArmy.battleSize.points}} points</p>
+        <p>Detachments<span class="float-end">{{newArmy.battleSize.commandPoints}}CP</span></p>
+        <div class="detachments">
+            <ng-container *ngFor="let detachment of newArmy.detachments; let index = index">
+                <div class="detachment rounded-3 border border-1 border-grey mb-2">
+                    <div class="row g-0">
+                        <div class="col p-2">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.armyType" (ngModelChange)="armyService.calculateArmyCP()">
+                                <option *ngFor="let army of core.armies" [ngValue]="army">{{army.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col p-2">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.detachmentType" (ngModelChange)="armyService.calculateArmyCP()">
+                                <option *ngFor="let type of core.detachments" [ngValue]="type">{{type.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-1 p-2">
+                            <p class="mb-0">{{detachment.detachmentType.cost}}CP</p>
+                        </div>
+                        <div class="col-1">
+                            <button class="border-0 bg-transparent cross h-100 w-100" (click)="removeDetachment(index)">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="text-end mt-3">
+                <button class="btn add" [disabled]="newArmy.detachments.length >= 3" (click)="addDetachment()">ADD</button>
+            </div>
+        </div>
+    </div>
+    <div footer>
+        <button type="button" class="btn accept" (click)="createArmy(); closeModal('new-modal')">CREATE ROSTER</button>
+    </div>
+</app-modal>

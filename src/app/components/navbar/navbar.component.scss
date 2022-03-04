@@ -1,0 +1,14 @@
+@import '~src/styles.scss';
+
+nav#navbar {
+    height: 4rem;
+
+    a {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1.4rem;
+        color: $cerulean;
+    }
+}

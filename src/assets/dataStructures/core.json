@@ -1,0 +1,283 @@
+{
+    "battleSize": [
+        {
+            "name": "Incursion",
+            "commandPoints": 6,
+            "points": 1000
+        },
+        {
+            "name": "Strike Force",
+            "commandPoints": 12,
+            "points": 2000
+        }
+    ],
+    "detachments": [
+        {
+            "name": "Patrol",
+            "cost": 2,
+            "hq": {
+                "min": 1,
+                "max": 2
+            },
+            "troops": {
+                "min": 1,
+                "max": 3
+            },
+            "elites": {
+                "min": 0,
+                "max": 2
+            },
+            "fastAttack": {
+                "min": 0,
+                "max": 2
+            },
+            "heavySupport": {
+                "min": 0,
+                "max": 2
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 99
+            },
+            "flyer": {
+                "min": 0,
+                "max": 2
+            }
+        },
+        {
+            "name": "Batallion",
+            "cost": 3,
+            "hq": {
+                "min": 2,
+                "max": 3
+            },
+            "troops": {
+                "min": 3,
+                "max": 6
+            },
+            "elites": {
+                "min": 0,
+                "max": 6
+            },
+            "fastAttack": {
+                "min": 0,
+                "max": 3
+            },
+            "heavySupport": {
+                "min": 0,
+                "max": 3
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 99
+            },
+            "flyer": {
+                "min": 0,
+                "max": 2
+            }
+        },
+        {
+            "name": "Brigade",
+            "cost": 4,
+            "hq": {
+                "min": 3,
+                "max": 5
+            },
+            "troops": {
+                "min": 6,
+                "max": 12
+            },
+            "elites": {
+                "min": 3,
+                "max": 8
+            },
+            "fastAttack": {
+                "min": 3,
+                "max": 5
+            },
+            "heavySupport": {
+                "min": 3,
+                "max": 5
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 99
+            },
+            "flyer": {
+                "min": 0,
+                "max": 2
+            }
+        },
+        {
+            "name": "Vanguard",
+            "cost": 3,
+            "hq": {
+                "min": 1,
+                "max": 2
+            },
+            "troops": {
+                "min": 0,
+                "max": 3
+            },
+            "elites": {
+                "min": 3,
+                "max": 6
+            },
+            "fastAttack": {
+                "min": 0,
+                "max": 2
+            },
+            "heavySupport": {
+                "min": 0,
+                "max": 2
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 99
+            },
+            "flyer": {
+                "min": 0,
+                "max": 2
+            }
+        },
+        {
+            "name": "Spearhead",
+            "cost": 3,
+            "hq": {
+                "min": 1,
+                "max": 2
+            },
+            "troops": {
+                "min": 0,
+                "max": 3
+            },
+            "elites": {
+                "min": 0,
+                "max": 2
+            },
+            "fastAttack": {
+                "min": 0,
+                "max": 2
+            },
+            "heavySupport": {
+                "min": 3,
+                "max": 6
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 99
+            },
+            "flyer": {
+                "min": 0,
+                "max": 2
+            }
+        },
+        {
+            "name": "Outrider",
+            "cost": 3,
+            "hq": {
+                "min": 1,
+                "max": 2
+            },
+            "troops": {
+                "min": 0,
+                "max": 3
+            },
+            "elites": {
+                "min": 0,
+                "max": 2
+            },
+            "fastAttack": {
+                "min": 3,
+                "max": 6
+            },
+            "heavySupport": {
+                "min": 0,
+                "max": 2
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 99
+            },
+            "flyer": {
+                "min": 0,
+                "max": 2
+            }
+        },
+        {
+            "name": "Supreme Command",
+            "cost": 0,
+            "hq": {
+                "min": 0,
+                "max": 1
+            },
+            "lordOfWar": {
+                "min": 0,
+                "max": 1
+            }
+        },
+        {
+            "name": "Super-Heavy",
+            "cost": 6,
+            "lordOfWar": {
+                "min": 3,
+                "max": 5
+            }
+        },
+        {
+            "name": "Super-Heavy Auxillary",
+            "cost": 3,
+            "lordOfWar": {
+                "min": 1,
+                "max": 1
+            }
+        },
+        {
+            "name": "Fortification Network",
+            "cost": 1,
+            "fortification": {
+                "min": 1,
+                "max": 3
+            }
+        },
+        {
+            "name": "Auxillary Support",
+            "cost": 2,
+            "hq": {
+                "min": 0,
+                "max": 1
+            },
+            "troops": {
+                "min": 0,
+                "max": 1
+            },
+            "elites": {
+                "min": 0,
+                "max": 1
+            },
+            "fastAttack": {
+                "min": 0,
+                "max": 1
+            },
+            "heavySupport": {
+                "min": 0,
+                "max": 1
+            },
+            "dedicatedTransport": {
+                "min": 0,
+                "max": 1
+            },
+            "flyer": {
+                "min": 0,
+                "max": 1
+            }
+        }
+    ],
+    "armies": [
+        {
+            "name": "Thousand Sons",
+            "faction": "Chaos",
+            "fileName": "thousandSons.json"
+        }
+    ]
+}

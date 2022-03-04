@@ -1,0 +1,97 @@
+$white: #FFFFFF;
+$gallery-white: #FAFAFA;
+$alto-white: #E0E0E0;
+$ghost-grey: #C8CFD6;
+$slate-grey: #708090;
+$river-bed: #434A55;
+$bootstrap-black: #343A40;
+$black: #000000;
+$wisteria: #A060AE;
+$mandy: #EB4C59;
+$fruit-salad: #4EA24E;
+$anakiwa: #C3E7FE;
+$cerulean: #49A8DB;
+$blumine: #124F6B;
+$sea-buckthorn: #F8A73D;
+$candlelight: #FBDB13;
+
+html {
+    font-size: 62.5%;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Poppins', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $river-bed;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Thin.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-ExtraLight.ttf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-ExtraBold.ttf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/Poppins-Black.ttf');
+    font-weight: 900;
+}
+
+button, input {
+    &:focus, &:active {
+        outline: none !important;
+    }
+}
+
+span.bolder {
+    font-weight: 400;
+}
+
+h3, h4 {
+    font-weight: 300;
+}

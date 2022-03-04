@@ -1,0 +1,1297 @@
+{
+    "name": "Thousand Sons",
+    "superFaction": "CHAOS",
+    "armyWideRules": [
+        {
+            "name": "Brotherhood of Sorcerers",
+            "rule": "Add 1 to Psychic tests taken for this unit. If this unit is ARCANA ASTARTES or TZAANGOR, each model in this unit has a 5+ invulnerable save"
+        },
+        {
+            "name": "Objective Secured",
+            "rule": "All RUBRIC MARINES, SCARAB OCCULT TERMINATORS and BRAY units in THOUSAND SONS Detachments gain the Objective Secured ability"
+        }
+    ],
+    "subFaction": [
+        {
+            "name": "Cult of Mutation",
+            "psychicPower": {
+                "name": "Warp Reality",
+                "rule": "Malediction: Warp Reality has a warp charge value of 6. If manife..."
+            },
+            "trait": {
+                "name": "Touch of Vicissitude",
+                "rule": "Each time a melee attack is made by thi..."
+            },
+            "relic": {
+                "name": "Exalted Mutation",
+                "rule": "SORCERER model only. Add 1 to the bearer's Strength, Toughness and Attacks characteristics"
+            }
+        },
+        {
+            "name": "Cult of Prophecy",
+            "psychicPower": {
+                "name": "Divine the Future",
+                "rule": "Blessing: Divine the Future has a warp charge of 6. If manife..."
+            },
+            "trait": {
+                "name": "Guided by the Whispers",
+                "rule": "Once per turn, when this WARLORD is selected as the target..."
+            },
+            "relic": {
+                "name": "Oraculae Brazier",
+                "rule": "In your Command phase, select one CULT OF PROPHECY CORE or..."
+            }
+        }
+    ],
+    "traits": [
+        {
+            "name": "Arrogance of Aeons",
+            "rule": "You can re-roll Deny the Witch tests taken..."
+        },
+        {
+            "name": "Seeker After Shadows",
+            "rule": "Each time this WARLORD attempts to perform a Psychic Action..."
+        }
+    ],
+    "infernalPacts": [
+        {
+            "name": "Bladed Maelstrom",
+            "rule": "If this pact is successful, select one enemy..."
+        },
+        {
+            "name": "Fires of the Abyss",
+            "rule": "If this pact is successful, the closest enemy..."
+        }
+    ],
+    "relics": [
+        {
+            "name": "Seer's Bane",
+            "rule": "Model equipped with a force sword or Prosperine khopesh...",
+            "profile": {
+                "name": "Seer's Bane",
+                "range": "Melee",
+                "type": "Melee",
+                "strength": "+2",
+                "armorPenetration": "-4",
+                "damage": "D3",
+                "abilities": "Each time an attack is made with this weapon against..."
+            }
+        },
+        {
+            "name": "Umbralefic Crystal",
+            "rule": "Once per battle, in your Command phase, you can select the bearer or one friendly..."
+        }
+    ],
+    "psychicPowers": [
+        {
+            "discipline": "Discipline of Change",
+            "powers": [
+                {
+                    "name": "11. Tzeentch's Firestorm",
+                    "rule": "Witchfire: Tzeentch's Firestorm has a warp charge value of 6. If manifested..."
+                },
+                {
+                    "name": "12. Glamour of Tzeentch",
+                    "rule": "Blessing: Glamour of Tzeentch has a warp charge value of 6. If manifested..."
+                }
+            ]
+        },
+        {
+            "discipline": "Discipline of Vengeance",
+            "powers": [
+                {
+                    "name": "11. Gaze of Hate",
+                    "rule": "Witchfire: Tzeentch's Firestorm has a warp charge value of 5. If manifested..."
+                },
+                {
+                    "name": "12. Twist of Fate",
+                    "rule": "Malediction: Glamour of Tzeentch has a warp charge value of 8. If manifested..."
+                }
+            ]
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "name": "Ahriman",
+            "codex": "Thousand Sons",
+            "role": "HQ",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Ahriman",
+                    "movement": 6,
+                    "weaponSkill": 2,
+                    "ballisticSkill": 2,
+                    "strength": 4,
+                    "toughness": 4,
+                    "wounds": 6,
+                    "attacks": 5,
+                    "leadership": 9,
+                    "save": 3
+                }
+            ],
+            "description": "Ahriman is equipped with: inferno bolt pistol; Black Staff of Ahriman; frag grenades; krak grenades. Your army can only include one AHRIMAN model",
+            "weapons": [
+                19,
+                40,
+                47
+            ],
+            "otherWargear": [
+                {
+                    "name": "Disc of Tzeentch",
+                    "rule": "The bearer has a Move characteristic of 12\" and the FLY and CAVALRY keywords, and does not have the INFANTRY keyword"
+                }
+            ],
+            "wargearOptions": [
+                "This model can be equipped with 1 Disc of Tzeentch and 1 disc blades (Power Rating +1)"
+            ],
+            "abilities": [
+                {
+                    "name": "Cabalistic Rituals",
+                    "rule": "(pg 71)"
+                },
+                {
+                    "name": "Lord of the Thousand Sons (Aura)",
+                    "rule": "While a friendly THOUSAND SONS CORE unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1"
+                },
+                {
+                    "name": "Arch-Sorcerer of Tzeentch",
+                    "rule": "Each time a Psychic test is taken for this model, you can re-roll that test"
+                },
+                {
+                    "name": "Sigil of Corruption",
+                    "rule": "This model has a 4+ invulnerable save"
+                }
+            ],
+            "psyker": {
+                "description": "This model can attempt to manifest three psychic powers in your Psychic phase and attempt to deny three psychic powers in your opponent's Psychic phase. It knows Smite and three psychic powers from the Discipline of Change (pg 58) and/or the Discipline of Vengeance (pg 59)",
+                "powers": [
+                    {
+                        "name": "-",
+                        "rule": ""
+                    },
+                    {
+                        "name": "-",
+                        "rule": ""
+                    },
+                    {
+                        "name": "-",
+                        "rule": ""
+                    }
+                ]
+            },
+            "factionKeywords": [
+                "CHAOS",
+                "TZEENTCH",
+                "HERETIC ASTARTES",
+                "ARCANA ASTARTES",
+                "THOUSAND SONS"
+            ],
+            "keywords": [
+                "CHARACTER",
+                "INFANTRY",
+                "PSYKER",
+                "EXALTED SORCERER",
+                "AHRIMAN"
+            ],
+            "wargear": [
+                {
+                    "selectedOption": {
+                        "name": "-",
+                        "cost": 0
+                    },
+                    "options": [
+                        {
+                            "name": "-",
+                            "cost": 0
+                        },
+                        {
+                            "name": "Disc of Tzeentch",
+                            "cost": 20,
+                            "power": 1
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "Ahriman",
+                    "points": 160
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Thousand Sons Daemon Prince",
+            "codex": "Thousand Sons",
+            "role": "HQ",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Daemon Prince",
+                    "movement": 8,
+                    "weaponSkill": 2,
+                    "ballisticSkill": 2,
+                    "strength": 7,
+                    "toughness": 6,
+                    "wounds": 8,
+                    "attacks": 5,
+                    "leadership": 10,
+                    "save": 3
+                }
+            ],
+            "description": "A Thousand Sons Daemon Prince is equipped with: hellforged sword, malefic talons",
+            "weapons": [
+                44,
+                56,
+                59
+            ],
+            "otherWargear": [
+                {
+                    "name": "Wings",
+                    "rule": "The bearer has a Move characteristic of 12\" and the FLY keyword"
+                }
+            ],
+            "wargearOptions": [
+                "This models hellforged sword can be replaced with one of the following: 1 daemonic axe, 1 malefic talons",
+                "This model can be equipped with wings (Power Rating +2)"
+            ],
+            "abilities": [
+                {
+                    "name": "Cabalistic Rituals",
+                    "rule": "(pg 71)"
+                },
+                {
+                    "name": "Chosen of Tzeentch",
+                    "rule": "This model has a 4+ invulnerable save"
+                }
+            ],
+            "psyker": {
+                "description": "This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny one psychic powers in your opponent's Psychic phase. It knows Smite and two psychic powers from the Discipline of Change (pg 58) and/or the Discipline of Vengeance (pg 59)",
+                "powers": [
+                    {
+                        "name": "-",
+                        "rule": ""
+                    },
+                    {
+                        "name": "-",
+                        "rule": ""
+                    }
+                ]
+            },
+            "factionKeywords": [
+                "CHAOS",
+                "TZEENTCH",
+                "HERETIC ASTARTES",
+                "ARCANA ASTARTES",
+                "THOUSAND SONS",
+                "<GREAT CULT>"
+            ],
+            "keywords": [
+                "CHARACTER",
+                "MONSTER",
+                "DAEMON",
+                "PSYKER",
+                "DAEMON PRINCE"
+            ],
+            "wargear": [
+                {
+                    "selectedOption": {
+                        "name": "-",
+                        "cost": 0
+                    },
+                    "options": [
+                        {
+                            "name": "-",
+                            "cost": 0
+                        },
+                        {
+                            "name": "Wings",
+                            "cost": 35
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "Daemon Prince",
+                    "points": 140,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Hellforged Sword",
+                                "cost": 10
+                            },
+                            "options": [
+                                {
+                                    "name": "Hellforged Sword",
+                                    "cost": 10
+                                },
+                                {
+                                    "name": "Daemonic Axe",
+                                    "cost": 10
+                                },
+                                {
+                                    "name": "Malefic Talon",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Thousand Sons Cultists",
+            "codex": "Thousand Sons",
+            "role": "TROOPS",
+            "power": 2,
+            "statistics": [
+                {
+                    "numberMin": 9,
+                    "numberMax": 29,
+                    "name": "Cultist",
+                    "movement": 6,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 3,
+                    "toughness": 3,
+                    "wounds": 1,
+                    "attacks": 1,
+                    "leadership": 5,
+                    "save": 6
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Cultist Champion",
+                    "movement": 6,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 3,
+                    "toughness": 3,
+                    "wounds": 1,
+                    "attacks": 2,
+                    "leadership": 6,
+                    "save": 6
+                }
+            ],
+            "description": "If this unit contains 11-20 models, it has Power Rating 5. If this unit contains 21-30 models, it has Power Rating 8. Every model is equipped with autogun",
+            "weapons": [
+                1,
+                2,
+                8,
+                16,
+                32,
+                42
+            ],
+            "wargearOptions": [
+                "Any number of cultists can have their autogun replaced with 1 autopistol and 1 brutal assault weapon",
+                "For every 10 models this unit contains, 1 Thousand Sons Cultist's autogun can be replaced with one of the following: 1 flamer; 1 heavy stubber",
+                "The Thousand Sons Cultist Champion's autogun can be replaced with 1 shotgun and 1 brutal assault weapon"
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "TZEENTCH",
+                "THOUSAND SONS"
+            ],
+            "keywords": [
+                "INFANTRY",
+                "THOUSAND SONS CULTISTS"
+            ],
+            "defaultModels": [
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Autopistol and Brutal Assault Weapon",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Flamer",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Heavy Stubber",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cultist Champion",
+                    "points": 5,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Autogun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Autogun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Shotgun and Brutal Assault Weapon",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Rubric Marines",
+            "codex": "Thousand Sons",
+            "role": "TROOPS",
+            "power": 6,
+            "statistics": [
+                {
+                    "numberMin": 4,
+                    "numberMax": 9,
+                    "name": "Rubric Marine",
+                    "movement": 6,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 4,
+                    "toughness": 4,
+                    "wounds": 2,
+                    "attacks": 2,
+                    "leadership": 7,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Aspiring Sorcerer",
+                    "movement": 6,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 4,
+                    "toughness": 4,
+                    "wounds": 2,
+                    "attacks": 2,
+                    "leadership": 8,
+                    "save": 3
+                }
+            ],
+            "description": "If this unit contains 6-20 models, it has Power Rating 12. The Aspiring Sorcerer is equipped with: inferno bolt pistol; force stave. Every Rubric Marine is equipped with: inferno boltgun",
+            "weapons": [
+                19,
+                20,
+                29,
+                33,
+                37,
+                38,
+                50
+            ],
+            "otherWargear": [
+                {
+                    "name": "Icon of flame",
+                    "rule": "At the start of your Psychic phase, if your army is a Cabal of Sorcerers and the bearer is on the battlefield, you generate 1 additional Cabal point"
+                }
+            ],
+            "wargearOptions": [
+                "The Aspiring Sorcerer's inferno bolt pistol can be replaced with one of the following: 1 plasma pistol, 1 warpflame pistol",
+                "Any number of Rubric Marines can each have their inferno boltgun replaced with 1 warpflamer",
+                "1 Rubric Marine can have its inferno boltgun replaced with 1 soulreaper cannon",
+                "1 Rubric Marine can be equipped with 1 icon of flame"
+            ],
+            "abilities": [
+                {
+                    "name": "Malicious Volleys, Cabbalistic Rituals, Sorcerous Master",
+                    "rule": "(pg 71)"
+                },
+                {
+                    "name": "Arcane Automata",
+                    "rule": "Each time a Morale test is taken for this unit, it is automatically passed"
+                },
+                {
+                    "name": "All Is Dust",
+                    "rule": "Each time an attack with a Damage characteristic of 1 is allocated to a mode in this unit, add 1 to any armour saving throw made against that attack. In addition, models in this unit do not suffer the penalty to hit rolls incurred for firing Heavy weapons in the same turn that their unit has moved"
+                }
+            ],
+            "psyker": {
+                "description": "This model can attempt to manifest one psychic powers in your Psychic phase and attempt to deny one psychic powers in your opponent's Psychic phase. It knows Smite and one psychic powers from the Discipline of Change (pg 58) and/or the Discipline of Vengeance (pg 59)",
+                "powers": [
+                    {
+                        "name": "-",
+                        "rule": ""
+                    }
+                ]
+            },
+            "factionKeywords": [
+                "CHAOS",
+                "TZEENTCH",
+                "HERETIC ASTARTES",
+                "ARCANA ASTARTES",
+                "THOUSAND SONS",
+                "<GREAT CULT>"
+            ],
+            "keywords": [
+                "INFANTRY",
+                "PSYKER",
+                "CORE",
+                "RUBRIC MARINES"
+            ],
+            "wargear": [
+                {
+                    "selectedOption": {
+                        "name": "-",
+                        "cost": 0
+                    },
+                    "options": [
+                        {
+                            "name": "-",
+                            "cost": 0
+                        },
+                        {
+                            "name": "Icon of flame",
+                            "cost": 10
+                        }
+                    ]
+                }
+            ],
+            "defaultModels": [
+                {
+                    "name": "Rubric Marine",
+                    "points": 21,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Inferno boltgun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Inferno boltgun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Warpflamer",
+                                    "cost": 6
+                                },
+                                {
+                                    "name": "Soulreaper cannon",
+                                    "cost": 10
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "Rubric Marine",
+                    "points": 21,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Inferno boltgun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Inferno boltgun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Warpflamer",
+                                    "cost": 6
+                                },
+                                {
+                                    "name": "Soulreaper cannon",
+                                    "cost": 10
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Rubric Marine",
+                    "points": 21,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Inferno boltgun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Inferno boltgun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Warpflamer",
+                                    "cost": 6
+                                },
+                                {
+                                    "name": "Soulreaper cannon",
+                                    "cost": 10
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Rubric Marine",
+                    "points": 21,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Inferno boltgun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Inferno boltgun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Warpflamer",
+                                    "cost": 6
+                                },
+                                {
+                                    "name": "Soulreaper cannon",
+                                    "cost": 10
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Rubric Marine",
+                    "points": 21,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Inferno boltgun",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Inferno boltgun",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Warpflamer",
+                                    "cost": 6
+                                },
+                                {
+                                    "name": "Soulreaper cannon",
+                                    "cost": 10
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Aspiring Sorcerer",
+                    "points": 21,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Inferno bolt pistol",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Inferno bolt pistol",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Plasma pistol",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Warpflame pistol",
+                                    "cost": 5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "armoury": [
+        {
+            "id": 1,
+            "name": "Autogun",
+            "range": 24,
+            "type": "Rapid Fire 1",
+            "strength": "3",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 2,
+            "name": "Autopistol",
+            "range": 12,
+            "type": "Pistol 1",
+            "strength": "3",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 3,
+            "name": "Baleflamer",
+            "range": 18,
+            "type": "Assault 2D3",
+            "strength": "6",
+            "armourPiercing": "-2",
+            "damage": "2",
+            "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
+        },
+        {
+            "id": 4,
+            "name": "Defiler cannon",
+            "range": 72,
+            "type": "Heavy D6",
+            "strength": "8",
+            "armourPiercing": "-2",
+            "damage": "3",
+            "abilities": "Blast"
+        },
+        {
+            "id": 5,
+            "name": "Demolisher cannon",
+            "range": 24,
+            "type": "Heavy D6",
+            "strength": "10",
+            "armourPiercing": "-3",
+            "damage": "D6",
+            "abilities": "Blast"
+        },
+        {
+            "id": 6,
+            "name": "Ectoplasma cannon",
+            "range": 36,
+            "type": "Heavy D3",
+            "strength": "7",
+            "armourPiercing": "-3",
+            "damage": "3",
+            "abilities": "-"
+        },
+        {
+            "id": 7,
+            "name": "Fatecaster greatbow",
+            "range": 30,
+            "type": "Assault 1",
+            "strength": "5",
+            "armourPiercing": "-1",
+            "damage": "1",
+            "abilities": "Each time you select a target for this weapon, you can ignore the Look Out, Sir rule. Each time an attack is made with this weapon, an unmodified hit roll of 2+ is always successful"
+        },
+        {
+            "id": 8,
+            "name": "Flamer",
+            "range": 12,
+            "type": "Assault D6",
+            "strength": "4",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
+        },
+        {
+            "id": 9,
+            "name": "Frag grenades",
+            "range": 6,
+            "type": "Grenade D6",
+            "strength": "3",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "Blast"
+        },
+        {
+            "id": 10,
+            "name": "Hades autocannon",
+            "range": 36,
+            "type": "Heavy 4",
+            "strength": "8",
+            "armourPiercing": "-2",
+            "damage": "2",
+            "abilities": "-"
+        },
+        {
+            "id": 16,
+            "name": "Heavy stubber",
+            "range": 36,
+            "type": "Heavy 3",
+            "strength": "4",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 19,
+            "name": "Inferno bolt pistol",
+            "range": 12,
+            "type": "Pistol 1",
+            "strength": "4",
+            "armourPiercing": "-2",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 20,
+            "name": "Inferno boltgun",
+            "range": 24,
+            "type": "Rapid Fire 1",
+            "strength": "4",
+            "armourPiercing": "-2",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 21,
+            "name": "Inferno combi-bolter",
+            "range": 24,
+            "type": "Rapid Fire 2",
+            "strength": "4",
+            "armourPiercing": "-2",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 24,
+            "name": "Krak grenades",
+            "range": 6,
+            "type": "Grenade 1",
+            "strength": "6",
+            "armourPiercing": "-1",
+            "damage": "D3",
+            "abilities": "-"
+        },
+        {
+            "id": 29,
+            "name": "Plasma pistol",
+            "description": "Before selecting targets, select one of the profiles below to make attacks with",
+            "profile": [
+                {
+                    "name": "- Standard",
+                    "range": 12,
+                    "type": "Pistol 1",
+                    "strength": "7",
+                    "armourPiercing": "-3",
+                    "damage": "1",
+                    "abilities": "-"
+                },
+                {
+                    "name": "- Supercharge",
+                    "range": 12,
+                    "type": "Pistol 1",
+                    "strength": "8",
+                    "armourPiercing": "-3",
+                    "damage": "2",
+                    "abilities": "If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon"
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "name": "Shotgun",
+            "range": 18,
+            "type": "Assault 2",
+            "strength": "3",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 33,
+            "name": "Soulreaper cannon",
+            "range": 24,
+            "type": "Heavy 5",
+            "strength": "6",
+            "armourPiercing": "-3",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 37,
+            "name": "Warpflame pistol",
+            "range": 12,
+            "type": "Pistol D6",
+            "strength": "3",
+            "armourPiercing": "-2",
+            "damage": "1",
+            "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
+        },
+        {
+            "id": 38,
+            "name": "Warpflamer",
+            "range": 12,
+            "type": "Assault D6",
+            "strength": "4",
+            "armourPiercing": "-2",
+            "damage": "1",
+            "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
+        },
+        {
+            "id": 40,
+            "name": "Black Staff of Ahriman",
+            "range": 0,
+            "type": "Melee",
+            "strength": "+3",
+            "armourPiercing": "-1",
+            "damage": "3",
+            "abilities": "-"
+        },
+        {
+            "id": 42,
+            "name": "Brutal assault weapon",
+            "range": 0,
+            "type": "Melee",
+            "strength": "User",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "Each time the bearer fights, it makes 1 additional attack with this weapon"
+        },
+        {
+            "id": 44,
+            "name": "Daemonic axe",
+            "range": 0,
+            "type": "Melee",
+            "strength": "+2",
+            "armourPiercing": "-2",
+            "damage": "3",
+            "abilities": "-"
+        },
+        {
+            "id": 47,
+            "name": "Disc blades",
+            "range": 0,
+            "type": "Melee",
+            "strength": "4",
+            "armourPiercing": "0",
+            "damage": "1",
+            "abilities": "Each time the bearer fights, it makes 1 additional attack with this weapon"
+        },
+        {
+            "id": 50,
+            "name": "Force stave",
+            "range": 0,
+            "type": "Melee",
+            "strength": "+3",
+            "armourPiercing": "-1",
+            "damage": "D3",
+            "abilities": "-"
+        },
+        {
+            "id": 56,
+            "name": "Hellforged sword",
+            "range": 0,
+            "type": "Melee",
+            "strength": "+1",
+            "armourPiercing": "-3",
+            "damage": "3",
+            "abilities": "-"
+        },
+        {
+            "id": 59,
+            "name": "Malefic talons",
+            "range": 0,
+            "type": "Melee",
+            "strength": "User",
+            "armourPiercing": "-2",
+            "damage": "2",
+            "abilities": "Each time the bearer fights, it makes 1 additional attack with this weapon"
+        }
+    ]
+}

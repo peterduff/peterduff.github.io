@@ -1,0 +1,82 @@
+@import '~src/styles.scss';
+
+nav#utility-bar {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    background-color: $ghost-grey;
+
+    button {
+        background-color: darken($ghost-grey, 10%);
+        color: $bootstrap-black;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        height: 3rem;
+
+        a {
+            text-decoration: none;
+            color: $bootstrap-black;
+        }
+
+        &:hover {
+            background-color: darken($ghost-grey, 20%);
+        }
+    }
+
+    div {
+        h3.total-points {
+            font-weight: 300;
+            color: $blumine;
+
+            span.over {
+                color: $mandy;
+            }
+
+            span.command-points {
+                color: darken($fruit-salad, 10%);
+            }
+        }
+    }
+}
+
+app-modal#new-modal {
+    div {
+        div.border-grey {
+            border-color: $slate-grey;
+        }
+
+        div.detachments {
+            height: 17.275rem;
+
+            div.detachment {
+                p {
+                    line-height: 2.875rem;
+                }
+
+                button.cross {
+                    font-size: 2.4rem;
+                    color: $mandy;
+
+                    &:hover {
+                        color: darken($mandy, 20%);
+                    }
+                }
+            }
+
+            button.add {
+                background-color: $cerulean;
+                color: $white;
+                font-size: 1.4rem;
+                font-weight: 300;
+
+                &:hover {
+                    background-color: darken($cerulean, 10%);
+                }
+            }
+        }
+
+
+    }
+}
