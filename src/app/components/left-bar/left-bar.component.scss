@@ -1,14 +1,14 @@
 @import '~src/styles.scss';
 
-nav#codex-bar {
+nav#left-bar {
     position: fixed;
 
-    div.codex-bar {
+    div.left-bar {
         background: $alto-white;
         left: 0;
         top: 8rem;
         width: 32rem;
-        height: 100vh;
+        height: calc(100vh - 8rem);
         overflow: auto;
 
         h3 {

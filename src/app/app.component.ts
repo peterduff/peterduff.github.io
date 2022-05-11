@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {ArmyService} from "./services/army.service";
 import {Subscription} from "rxjs";
+import {ArmyService} from "./services/army.service";
+import {Unit} from "./models/unit";
 
 @Component({
     selector: 'app-root',
@@ -8,12 +9,11 @@ import {Subscription} from "rxjs";
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'army-reactor';
 
-    activeUnit: any;
+    activeUnit: Unit | undefined;
     activeUnitSubscription: Subscription;
 
     constructor(private armyService: ArmyService) {
-        this.activeUnitSubscription = this.armyService.getActiveUnit().subscribe(data => this.activeUnit = data);
+        this.activeUnitSubscription = this.armyService.getActiveUnit().subscribe( (data: Unit | undefined) => this.activeUnit = data);
     }
 }

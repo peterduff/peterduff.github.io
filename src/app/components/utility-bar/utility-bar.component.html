@@ -28,12 +28,12 @@
                 <div class="detachment rounded-3 border border-1 border-grey mb-2">
                     <div class="row g-0">
                         <div class="col p-2">
-                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.armyType" (ngModelChange)="armyService.calculateArmyCP()">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.config" (ngModelChange)="armyService.calculateArmyCP()" [compareWith]="compare">
                                 <option *ngFor="let army of core.armies" [ngValue]="army">{{army.name}}</option>
                             </select>
                         </div>
                         <div class="col p-2">
-                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.detachmentType" (ngModelChange)="armyService.calculateArmyCP()">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.detachmentType" (ngModelChange)="armyService.calculateArmyCP()" [compareWith]="compare">
                                 <option *ngFor="let type of core.detachments" [ngValue]="type">{{type.name}}</option>
                             </select>
                         </div>

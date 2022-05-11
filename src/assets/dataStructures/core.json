@@ -276,8 +276,13 @@
     "armies": [
         {
             "name": "Thousand Sons",
-            "faction": "Chaos",
+            "superFaction": "Chaos",
             "fileName": "thousandSons.json"
+        },
+        {
+            "name": "Chaos Knights",
+            "superFaction": "Chaos",
+            "fileName": "chaosKnights.json"
         }
     ]
 }

@@ -1,22 +1,126 @@
 {
-    "name": "The Aggressive Aardvarks",
-    "battleSize": {
-        "name": "Strike Force",
-        "commandPoints": 12,
-        "points": 2000
+    "name":"The Mindful Mindflayers",
+    "totalPoints":0,
+    "totalCP":7,
+    "battleSize":{
+        "name":"Strike Force",
+        "commandPoints":12,
+        "points":2000
     },
-    "detachments": [
+    "detachments":[
         {
-            "armyType": {
-                "name": "Thousand Sons",
-                "faction": "Chaos",
-                "fileName": "thousandSons.json"
+            "config":{
+                "name":"Thousand Sons",
+                "faction":"Chaos",
+                "fileName":"thousandSons.json",
+                "subFaction":{
+                    "name":"Cult of Prophecy",
+                    "psychicPower":{
+                        "name":"Divine the Future",
+                        "rule":"Blessing: Divine the Future has a warp charge of 6. If manife..."
+                    },
+                    "trait":{
+                        "name":"Guided by the Whispers",
+                        "rule":"Once per turn, when this WARLORD is selected as the target..."
+                    },
+                    "relic":{
+                        "name":"Oraculae Brazier",
+                        "rule":"In your Command phase, select one CULT OF PROPHECY CORE or..."
+                    }
+                }
             },
-            "detachmentType": {
-                "name": "Patrol",
-                "subFaction": ""
+            "detachmentType":{
+                "name":"Patrol",
+                "cost":2,
+                "hq":{
+                    "min":1,
+                    "max":2
+                },
+                "troops":{
+                    "min":1,
+                    "max":3
+                },
+                "elites":{
+                    "min":0,
+                    "max":2
+                },
+                "fastAttack":{
+                    "min":0,
+                    "max":2
+                },
+                "heavySupport":{
+                    "min":0,
+                    "max":2
+                },
+                "dedicatedTransport":{
+                    "min":0,
+                    "max":99
+                },
+                "flyer":{
+                    "min":0,
+                    "max":2
+                }
             },
-            "units": []
+            "units":[
+
+            ]
+        },
+        {
+            "config":{
+                "name":"Thousand Sons",
+                "faction":"Chaos",
+                "fileName":"thousandSons.json",
+                "subFaction":{
+                    "name":"Cult of Prophecy",
+                    "psychicPower":{
+                        "name":"Divine the Future",
+                        "rule":"Blessing: Divine the Future has a warp charge of 6. If manife..."
+                    },
+                    "trait":{
+                        "name":"Guided by the Whispers",
+                        "rule":"Once per turn, when this WARLORD is selected as the target..."
+                    },
+                    "relic":{
+                        "name":"Oraculae Brazier",
+                        "rule":"In your Command phase, select one CULT OF PROPHECY CORE or..."
+                    }
+                }
+            },
+            "detachmentType":{
+                "name":"Batallion",
+                "cost":3,
+                "hq":{
+                    "min":2,
+                    "max":3
+                },
+                "troops":{
+                    "min":3,
+                    "max":6
+                },
+                "elites":{
+                    "min":0,
+                    "max":6
+                },
+                "fastAttack":{
+                    "min":0,
+                    "max":3
+                },
+                "heavySupport":{
+                    "min":0,
+                    "max":3
+                },
+                "dedicatedTransport":{
+                    "min":0,
+                    "max":99
+                },
+                "flyer":{
+                    "min":0,
+                    "max":2
+                }
+            },
+            "units":[
+
+            ]
         }
     ]
 }

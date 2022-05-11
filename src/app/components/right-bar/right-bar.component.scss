@@ -1,14 +1,14 @@
 @import '~src/styles.scss';
 
-nav#army-bar {
+nav#right-bar {
     position: fixed;
 
-    div.army-bar {
+    div.right-bar {
         background: $alto-white;
         right: 0;
         top: 8rem;
         width: calc(50vw - 16rem);
-        height: 100vh;
+        height: calc(100vh - 8rem);
         overflow: auto;
 
         h3 {
@@ -121,6 +121,10 @@ nav#army-bar {
                             background-color: lighten($alto-white, 5%);
                             display: inline-block;
                         }
+
+                        select {
+                            font-size: 1.2rem;
+                        }
                     }
 
                     &.points {
@@ -132,5 +136,12 @@ nav#army-bar {
                 }
             }
         }
+    }
+}
+
+app-modal.modal {
+    div.sub-faction {
+        cursor: pointer;
+        background-color: $alto-white;
     }
 }

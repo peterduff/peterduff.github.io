@@ -1,0 +1,1942 @@
+{
+    "config": {
+        "name": "Chaos Knights",
+        "superFaction": "CHAOS",
+        "fileName": "chaosKnights.json"
+    },
+    "armyWideRules": [
+        {
+            "name": "Objective Secured",
+            "rule": "WAR DOG-CLASS units in CHAOS KNIGHTS Detachments gain the Objective Secured ability (this ability is described in the Warhammer 40,000 Core Book)."
+        },
+        {
+            "name": "Harbingers of Dread",
+            "rule": "If every unit from your army has the CHAOS KNIGHTS keyword (excluding units with the UNALIGNED or AGENT OF CHAOS keywords), then this unit gains a bonus (see opposite) depending on which Harbinger abilities are active for your army. At the start of each battle round, you must select one Harbinger ability (either a Despair, Doom, or Darkness Harbinger ability) from the corresponding choices for that battle round in the table shown opposite. Note that when making a selection: During the first and fifth battle rounds, you must select the Doom ability. You can only select the Despair ability if you selected the Despair or Doom ability in the previous battle round. You can only select the Darkness ability if you selected the Darkness or Doom ability in the previous battle round."
+        }
+    ],
+    "subFactions": [
+        {
+            "name": "House Herpetrax",
+            "abilities": [
+                {
+                    "name": "Conquerors Without Mercy",
+                    "rule": "Each time a model with this ambition fights, if it made a charge move, was charged or performed a Heroic Intervention this turn, then until that fight is resolved: Add 1 to the Attacks characteristic of this model. Improve the Armour Penetration characteristic of melee weapons this model is equipped with by 1."
+                },
+                {
+                    "name": "Dauntless",
+                    "rule": "Add 2 to the Wounds characteristic of WAR DOG-CLASS models with this bond. Add 4 to the Wounds characteristic of TITANIC models with this bond."
+                }
+            ],
+            "trait": {
+                "name": "Bow to None",
+                "rule": "This WARLORD can ignore any or all modifiers to their characteristics profile (the only exceptions are characteristics changes incurred as a result of Damage suffered, as shown on this WARLORD'S datasheet). Each time this WARLORD makes an attack, you can ignore any or all modifiers to its hit rolls, wound rolls, or damage rolls. Each time this WARLORD Advances or declares a charge, you can ignore any or all modifiers to its Advance rolls or charge rolls."
+            },
+            "relic": {
+                "name": "Crown of Jedathra",
+                "rule": "HOUSE HERPETRAX ABHORRENT-CLASS mode or HOUSE HERPETRAX WAR DOG-CLASS model only. Each time a melee attack is made against the bearer, subtract 1 from that attack's hit roll."
+            }
+        },
+        {
+            "name": "House Lucaris",
+            "abilities": [
+                {
+                    "name": "Conquerors Without Mercy",
+                    "rule": "Each time a model with this ambition fights, if it made a charge move, was charged or performed a Heroic Intervention this turn, then until that fight is resolved: Add 1 to the Attacks characteristic of this model. Improve the Armour Penetration characteristic of melee weapons this model is equipped with by 1."
+                },
+                {
+                    "name": "Virtue Through Strength",
+                    "rule": "Each time a model with this bond is selected to fight, you can re-roll one hit roll or one wound roll when resolving that model's attacks."
+                }
+            ],
+            "trait": {
+                "name": "Strike First, Strike Often",
+                "rule": "At the start of the Fight phase, if this WARLORD is within Engagement Range of any enemy units, it can fight first that phase."
+            },
+            "relic": {
+                "name": "Serpentstrike Core",
+                "rule": "HOUSE LUCARIS model only. Select one daemonbreath meltagun, twin daemonbreath meltagun, daemonbreath spear or daemonbreath thermal cannon that model is equipped with. That weapon is now a Relic for all rules purposes. Delete that weapon's abilities. Add 1 to that weapon's Strength characteristic. Add 2 to that weapon's Damage characteristic."
+            }
+        },
+        {
+            "name": "House Khymere",
+            "abilities": [
+                {
+                    "name": "Conquerors Without Mercy",
+                    "rule": "Each time a model with this ambition fights, if it made a charge move, was charged or performed a Heroic Intervention this turn, then until that fight is resolved: Add 1 to the Attacks characteristic of this model. Improve the Armour Penetration characteristic of melee weapons this model is equipped with by 1."
+                },
+                {
+                    "name": "Rampant Cruelty",
+                    "rule": "Each time a model with this bond makes an attack, if that attack is made against a unit that was below Half-strength when this model was selected to shoot or fight, add 1 to the wound roll."
+                }
+            ],
+            "trait": {
+                "name": "Maddened Cries (Aura)",
+                "rule": "While an enemy unit is within 9\" of this WARLORD, at the start of each Morale phase, it must take a Dread test (pg 97), if that test is failed, that unit suffers 1 mortal wound."
+            },
+            "relic": {
+                "name": "Warpfire Shield",
+                "rule": "HOUSE KHYMERE model only. The bearer has a 5+ invulnerable save against melee attacks. Each time a melee attack is made against the bearer, on a unmodified saving throw of 6, the attacking model's unit suffers 1 mortal wound after all of the unit's attacks have been resolved (to a maximum of 6 mortal wounds per attacking unit)."
+            }
+        },
+        {
+            "name": "House Vextrix",
+            "abilities": [
+                {
+                    "name": "Daemonic Surge",
+                    "rule": "In each of your Command phases, each model with this Traitoris Ambition can use one Daemonic Surge. If a model uses a Daemonic Surge, you must do one of the following: Inflict 1 mortal wound on this model and roll one D3 on the table below to determine the rule that applies to this model until the start of your next Command phase. Inflict D3 mortal wounds on this model and select one result from the table below to apply to this model until the start of your next Command phase. 1. Daemonic Hunger: Add 3\" to this model's Move characteristic. 2. Daemonic Fortitude: Each time an attack is made against this model, an unmodified wound roll of 1-3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have. 3. Daemonic Power: Select one weapon this model is equipped with. Each time an attack is made with that weapon, add 1 to that attack's wound roll."
+                },
+                {
+                    "name": "Titankin",
+                    "rule": "Each time a model with this bond is selected to shoot, you can re-roll one hit roll and one wound roll when resolving that model's attacks."
+                }
+            ],
+            "trait": {
+                "name": "Favour of the Dark Mechanicum",
+                "rule": "If this WARLORD is a WAR DOG-CLASS model, add 1 to its Wounds characteristic. If this WARLORD is a TITANIC model, add 2 to its Wounds characteristic. At the start of each of your Command phases, this WARLORD regains D3 lost wounds."
+            },
+            "relic": {
+                "name": "Heretek Power Core",
+                "rule": "HOUSE VEXTRIX model only. Add 2\" to the bearer's Move characteristic. Each time the bearer makes a melee attack, unless that attack is made using the sweep profile of a melee weapon, add 1 to the Damage characteristic of that attack."
+            }
+        },
+        {
+            "name": "House Khomentis",
+            "abilities": [
+                {
+                    "name": "Daemonic Surge",
+                    "rule": "In each of your Command phases, each model with this Traitoris Ambition can use one Daemonic Surge. If a model uses a Daemonic Surge, you must do one of the following: Inflict 1 mortal wound on this model and roll one D3 on the table below to determine the rule that applies to this model until the start of your next Command phase. Inflict D3 mortal wounds on this model and select one result from the table below to apply to this model until the start of your next Command phase. 1. Daemonic Hunger: Add 3\" to this model's Move characteristic. 2. Daemonic Fortitude: Each time an attack is made against this model, an unmodified wound roll of 1-3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have. 3. Daemonic Power: Select one weapon this model is equipped with. Each time an attack is made with that weapon, add 1 to that attack's wound roll."
+                },
+                {
+                    "name": "Profane Symbiosis",
+                    "rule": "Each time a model with this bond uses a Daemonic Surge (pg 55): If you chose to inflict 1 mortal wound, you can re-roll the D3 when determining what Daemonic Surge result applies to this model until the start of your next Command phase. If you chose to inflict D3 mortal wounds, select two results from the Daemonic Surge table (pg 55) to apply to this model until the start of your next Command phase."
+                }
+            ],
+            "trait": {
+                "name": "Dread Hunter",
+                "rule": "Once per battle, at the start of your Shooting phase, this WARLORD can make a killing strike. If it does so, select one ranged weapon this WARLORD is equipped with. Until the end of the phase, each time an attack is made with that weapon, you can re-roll the hit roll, you can re-roll the wound roll and you add 1 to the Damage characteristic of that attack."
+            },
+            "relic": {
+                "name": "Daemonic Shrike",
+                "rule": "HOUSE KHOMENTIS PTERRORSHADE model only. At the start of each of your Shooting phases, select one enemy unit within 18\" of the bearer. Until the end of the turn, each time a ranged attack is made by the bearer against the enemy unit, improve the Armour Penetration characteristic of that attack by 1."
+            }
+        },
+        {
+            "name": "House Korvax",
+            "abilities": [
+                {
+                    "name": "Daemonic Surge",
+                    "rule": "In each of your Command phases, each model with this Traitoris Ambition can use one Daemonic Surge. If a model uses a Daemonic Surge, you must do one of the following: Inflict 1 mortal wound on this model and roll one D3 on the table below to determine the rule that applies to this model until the start of your next Command phase. Inflict D3 mortal wounds on this model and select one result from the table below to apply to this model until the start of your next Command phase. 1. Daemonic Hunger: Add 3\" to this model's Move characteristic. 2. Daemonic Fortitude: Each time an attack is made against this model, an unmodified wound roll of 1-3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have. 3. Daemonic Power: Select one weapon this model is equipped with. Each time an attack is made with that weapon, add 1 to that attack's wound roll."
+                },
+                {
+                    "name": "Forged in Terror",
+                    "rule": "Once per battle, at the start of any battle round, you can select one Harbinger ability (pg 98) from those corresponding to the current battle round, or any previous battle round. That ability becomes active for every model with this bond in your army, even if every unit from your army does not have the CHAOS KNIGHTS keyword."
+                }
+            ],
+            "trait": {
+                "name": "Lord of Dread",
+                "rule": "Add 3\" to the range of this WARLORD's Aura abilities (to a maximum of 12\"). Add 3\" to the range of this WARLORD's Dreaded abilities (pg 97)."
+            },
+            "relic": {
+                "name": "Rune of Darkness",
+                "rule": "HOUSE KORVAX model only. Once per battle round, when a saving throw made for the bearer is failed. you can use this Relic. When you do, the Damage characteristic of that attack is changed to 0. Each time this Relic is used, roll 2D6. If the result is equal to or greater than the bearer's Leadership characteristic, this Relic cannot be used again during the battle."
+            }
+        }
+    ],
+    "armyOfRenown": [
+    ],
+    "traits": [
+        {
+            "name": "Eager for the Kill",
+            "rule": "Add 1 to Advance and charge rolls made for this WARLORD. While this WARLORD is within your opponent's deployment zone, add 1 to its Attacks characteristic."
+        },
+        {
+            "name": "Harbinger of Scrapcode",
+            "rule": "In the Morale phase, select one enemy VEHICLE unit within 18\" of this WARLORD. That unit must take a Dread test (pg 97). If the test is failed: That unit suffers 3 mortal wounds. Until the start of the next Morale phase, models in that unit whose characteristics can change as they suffer damage are considered to have half the number of wounds remaining for the purposes of determining what those characteristics are (models in that unit whose characteristics do not change as they suffer damage instead reduce their Ballistic Skill and Weapon Skill characteristics by 1)."
+        },
+        {
+            "name": "Warp-Haunted Hull",
+            "rule": "Once per turn, this WARLORD can attempt to Deny the Witch as if it were a PSYKER. If this unit is a PSYKER, then in each enemy Psychic phase, it can instead attempt to Deny the Witch one additional time. Each time this WARLORD loses a wound in the Psychic phase, roll one D6: on a 5+, that wound is not lost."
+        },
+        {
+            "name": "Knight Diabolus",
+            "rule": "Add 1 to this WARLORD'S Attacks characteristic. Each time this WARLORD makes a melee attack re-roll a hit roll of 1."
+        },
+        {
+            "name": "Infernal Quest",
+            "rule": "This WARLORD has the Objective Secured ability (see the Warhammer 40,000 Core Book)."
+        },
+        {
+            "name": "Aura of Terror (Dreaded)",
+            "rule": "While an enemy unit is within Dread range (pg 97) of this WARLORD, each time a Morale test or Dread test is taken for that unit, your opponent must roll one additional D6 and discard the lowest result."
+        }
+    ],
+    "relics": [
+        {
+            "name": "The Blasphemous Engine",
+            "rule": "INFERNAL HOUSEHOLD ABHORRENT-CLASS or INFERNAL HOUSEHOLD WAR DOG-CLASS model only. Each time the bearer would lose a wound as a result of a mortal wound while using its Daemonic Surge Traitoris Ambition (pg 55), roll one D6: on a 2+, that wound is not lost. The bearer is considered to have double the number of wounds remaining for the purposes of determining what characteristics on its profile to use."
+        },
+        {
+            "name": "Veil of Medrengard",
+            "rule": "ICONOCLAST HOUSEHOLD ABHORRENT-CLASS or ICONOCLAST HOUSEHOLD WAR DOG-CLASS model only. The bearer has a 4+ invulnerable save against ranged attacks. The bearer has a 6+ invulnerable save against melee attacks."
+        },
+        {
+            "name": "The Diamonas",
+            "rule": "Model equipped with a Desecrator laser destructor only. This Relic replaces a Desecrator laser destructor and has the following profile:",
+            "profile": {
+                "name": "The Diamonas",
+                "range": 72,
+                "type": "Heavy 3",
+                "strength": "16",
+                "armorPenetration": "-5",
+                "damage": "D3+6",
+                "abilities": "-"
+            }
+        },
+        {
+            "name": "Helm of Dogs",
+            "rule": "WAR DOG-CLASS model only. Add 1 to the Attacks characteristic of the bearer. The bearer has the following ability: 'Helm of Dogs (Aura): While a friendly WAR DOG-CLASS model is within 6\" of the bearer, each time that model makes an attack, re-roll a wound roll of 1."
+        }
+    ],
+    "psychicPowers": [
+        {
+            "discipline": "Warp Storm Discipline",
+            "powers": [
+                {
+                    "name": "1. Winds of the Warp",
+                    "rule": "Blessing (Aura): Winds of the Warp has a warp charge value of 6. If manifested until the start of your next Psychic phase: Each time this PSYKER loses a wound, roll one D6: on a 5+, that wound is not lost. If the result of the Psychic test was 8 or more, while a friendly <DREAD HOUSEHOLD> WAR DOG-CLASS model is within 6\" of this PSYKER, each time that model loses a wound, roll one D6: on a 6, that wound is not lost."
+                },
+                {
+                    "name": "2. Vortex Terrors",
+                    "rule": "Malediction: Vortex Terrors has a warp charge value of 5. If manifested, select one enemy unit within 18\" of this PSYKER. Until the start of your next Psychic phase: Subtract 1 from the Leadership characteristic of models in that unit. Each time that unit is selected to shoot or fight, it must first take a Dread test (pg 97). If that test is failed, then until the end of the current phase, reduce the Weapon Skill and Ballistic Skill characteristics of models in that enemy unit by 1."
+                },
+                {
+                    "name": "3. The Storm Malevolent",
+                    "rule": "Malediction: The Storm Malevolent has a warp charge value of 7. If manifested, select one enemy unit within 18\" of this PSYKER. Until the start of your next Psychic phase, each time a friendly CHAOS KNIGHTS model makes a melee attack against that unit: Add 1 to that attack's wound roll. On a unmodified wound roll of 6, the target suffers 1 mortal wound in addition to the normal damage. A maximum of 3 mortal wounds can be inflicted on each enemy unit per phase as the result of this psychic power."
+                },
+                {
+                    "name": "4. Cyclonic Lamentation",
+                    "rule": "Witchfire: Cyclonic Lamentation has a warp charge value of 6. If manifested, select one enemy unit within 12\" of this PSYKER must take a Dread test (pg 97). Each unit that fails this test suffers 1 mortal wound (if the result of the Psychic test was 11+, each unit that fails their subsequent Dread test instead suffers D3 mortal wounds."
+                },
+                {
+                    "name": "5. Corsucating Hate",
+                    "rule": "Witchfire: Corsucating Hate has a warp charge value of 6. If manifested, the closest enemy unit within 18\" of and visible to this PSYKER suffers D3 mortal wounds. Then roll one D6: on a 2-3, the closest other enemy unit within 6\" of and visible to that enemy unit suffers 1 mortal wound; on a 4+ it suffers D3 mortal wounds."
+                },
+                {
+                    "name": "6. Spitesquall",
+                    "rule": "Malediction: Spitesquall has a warp charge value of 6. If manifested, select one enemy unit within 18\" of this PSYKER. Until the start of your next Psychic phase: That unit cannot fire Overwatch or Set to Defend. Keep a Spitesquall tally for that unit, adding 1 to the tally each time a model in that unit is destroyed. At the end of each phase, if that unit is still on the battlefield, roll one D6 for each mark on its Spitesquall tally: for each roll of 5+, that unit suffers 1 mortal wound. The unit's Spitesquall tally is reset to 0 at the end of each phase."
+                }
+            ]
+        }
+    ],
+    "upgrades": [
+        {
+            "name": "Blood Shield",
+            "rule": ""
+        },
+        {
+            "name": "Collar of Infernal Brass",
+            "rule": ""
+        },
+        {
+            "name": "Throne Mechanicum of Skulls",
+            "rule": ""
+        },
+        {
+            "name": "Pyrothrone",
+            "rule": ""
+        },
+        {
+            "name": "Cursed Rune of Fate",
+            "rule": ""
+        },
+        {
+            "name": "Mirror of Fates",
+            "rule": ""
+        },
+        {
+            "name": "The Putrid Carapace",
+            "rule": ""
+        },
+        {
+            "name": "Blessing of a Thousand Poxes",
+            "rule": ""
+        },
+        {
+            "name": "Aura of Corruption",
+            "rule": ""
+        },
+        {
+            "name": "Quicksilver Throne",
+            "rule": ""
+        },
+        {
+            "name": "Beguiling Majesty",
+            "rule": ""
+        },
+        {
+            "name": "Subjugator Machine Spirit",
+            "rule": ""
+        },
+        {
+            "name": "Mark of the Dread Knight",
+            "rule": ""
+        },
+        {
+            "name": "Warp-Borne Stalker",
+            "rule": ""
+        },
+        {
+            "name": "Blessing of the Dark Master",
+            "rule": ""
+        }
+    ],
+    "units": [
+        {
+            "id": 1,
+            "name": "War Dog Executioner",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Executioner",
+                    "profile": "(7+ wounds remaining)",
+                    "movement": 12,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 0,
+                    "numberMax": 0,
+                    "name": "War Dog Executioner",
+                    "profile": "(4-6 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 0,
+                    "numberMax": 0,
+                    "name": "War Dog Executioner",
+                    "profile": "(1-3 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 5,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                }
+            ],
+            "description": "If this unit contains 2 models, it has Power Rating 16. If this unit contains 3 models, it has Power Rating 24. Every model is equipped with daemonbreath meltagun; 2 War Dog autocannons.",
+            "weapons": [
+                3,
+                10,
+                21
+            ],
+            "wargearOptions": [
+                "Any number of models can each have their daemonbreath meltagun replaced with 1 diabolus heavy stubber."
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Harbingers of Dread, War Dog Squadron",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 6\" suffers D3 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "CORE",
+                "WAR DOG-CLASS",
+                "WAR DOG EXECUTIONER"
+            ],
+            "defaultModels": [
+                {
+                    "name": "War Dog Executioner",
+                    "points": 155,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Daemonbreath meltagun",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath meltagun",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "War Dog Executioner",
+                    "points": 155,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Daemonbreath meltagun",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath meltagun",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "War Dog Stalker",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Stalker",
+                    "profile": "(7+ wounds remaining)",
+                    "movement": 12,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Stalker",
+                    "profile": "(4-6 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Stalker",
+                    "profile": "(1-3 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 5,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                }
+            ],
+            "description": "If this unit contains 2 models, it has Power Rating 16. If this unit contains 3 models, it has Power Rating 24. Every model is equipped with avenger chaincannon; havoc multi-launcher; slaughterclaw",
+            "weapons": [
+                1,
+                4,
+                10,
+                14,
+                26,
+                27
+            ],
+            "wargearOptions": [
+                "Any number of models can each have their havoc multi-launcher replaced with 1 diabolus heavy stubber.",
+                "Any number of models can each have their slaughterclaw replaced with 1 reaper chaintalon.",
+                "Any number of models can each have their avenger chaincannon replaced with 1 daemonbreath spear."
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Harbingers of Dread, War Dog Squadron",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 6\" suffers D3 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "CORE",
+                "WAR DOG-CLASS",
+                "PTERRORSHADES",
+                "WAR DOG STALKER"
+            ],
+            "defaultModels": [
+                {
+                    "name": "War Dog Stalker",
+                    "points": 145,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Havoc multi-launcher",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Havoc multi-launcher",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "War Dog Stalker",
+                    "points": 145,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Havoc multi-launcher",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Havoc multi-launcher",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "War Dog Karnivore",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Karnivore",
+                    "profile": "(7+ wounds remaining)",
+                    "movement": 14,
+                    "weaponSkill": 2,
+                    "ballisticSkill": 3,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 5,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Karnivore",
+                    "profile": "(4-6 wounds remaining)",
+                    "movement": 12,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 4,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 5,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Karnivore",
+                    "profile": "(1-3 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 5,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 5,
+                    "leadership": 8,
+                    "save": 3
+                }
+            ],
+            "description": "If this unit contains 2 models, it has Power Rating 16. If this unit contains 3 models, it has Power Rating 24. Every model is equipped with havoc multi-launcher; reaper chaintalon; slaughterclaw",
+            "weapons": [
+                14,
+                26,
+                27
+            ],
+            "wargearOptions": [
+                "Any number of models can each have their havoc multi-launcher replaced with 1 diabolus heavy stubber."
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Harbingers of Dread, War Dog Squadron",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 6\" suffers D3 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "CORE",
+                "WAR DOG-CLASS",
+                "PTERRORSHADES",
+                "WAR DOG KARNIVORE"
+            ],
+            "defaultModels": [
+                {
+                    "name": "War Dog Karnivore",
+                    "points": 140,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Havoc multi-launcher",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Havoc multi-launcher",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "War Dog Karnivore",
+                    "points": 140,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Havoc multi-launcher",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Havoc multi-launcher",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "War Dog Brigand",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Brigand",
+                    "profile": "(7+ wounds remaining)",
+                    "movement": 12,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Brigand",
+                    "profile": "(4-6 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Brigand",
+                    "profile": "(1-3 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 5,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                }
+            ],
+            "description": "If this unit contains 2 models, it has Power Rating 16. If this unit contains 3 models, it has Power Rating 24. Every model is equipped with daemonbreath meltagun; 2 War Dog autocannons.",
+            "weapons": [
+                1,
+                4,
+                10,
+                14
+            ],
+            "wargearOptions": [
+                "Any number of models can each have their havoc multi-launcher replaced with 1 diabolus heavy stubber."
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Harbingers of Dread, War Dog Squadron",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 6\" suffers D3 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "CORE",
+                "WAR DOG-CLASS",
+                "PTERRORSHADES",
+                "WAR DOG BRIGAND"
+            ],
+            "defaultModels": [
+                {
+                    "name": "War Dog Brigand",
+                    "points": 155,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Havoc multi-launcher",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Havoc multi-launcher",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "War Dog Brigand",
+                    "points": 155,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Havoc multi-launcher",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Havoc multi-launcher",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "War Dog Huntsman",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 8,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Huntsman",
+                    "profile": "(7+ wounds remaining)",
+                    "movement": 12,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Huntsman",
+                    "profile": "(4-6 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 3,
+                    "name": "War Dog Huntsman",
+                    "profile": "(1-3 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 5,
+                    "strength": 6,
+                    "toughness": 7,
+                    "wounds": 12,
+                    "attacks": 4,
+                    "leadership": 8,
+                    "save": 3
+                }
+            ],
+            "description": "If this unit contains 2 models, it has Power Rating 16. If this unit contains 3 models, it has Power Rating 24. Every model is equipped with daemonbreath meltagun; 2 War Dog autocannons.",
+            "weapons": [
+                3,
+                4,
+                10,
+                26
+            ],
+            "wargearOptions": [
+                "Any number of models can each have their daemonbreath meltagun replaced with 1 diabolus heavy stubber."
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Harbingers of Dread, War Dog Squadron",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 6\" suffers D3 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "CORE",
+                "WAR DOG-CLASS",
+                "WAR DOG HUNTSMAN"
+            ],
+            "defaultModels": [
+                {
+                    "name": "War Dog Huntsman",
+                    "points": 145,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Daemonbreath meltagun",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath meltagun",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "models": [
+                {
+                    "name": "War Dog Huntsman",
+                    "points": 145,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Daemonbreath meltagun",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath meltagun",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Knight Abominant",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 22,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Abominant",
+                    "profile": "(13+ wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 3,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Abominant",
+                    "profile": "(7-12 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 3,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Abominant",
+                    "profile": "(1-6 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 5,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 3,
+                    "leadership": 9,
+                    "save": 3
+                }
+            ],
+            "description": "A Knight Abominant is equipped with: diabolus heavy stubber; volkite combustor; balemace; electroscourge; titanic feet",
+            "weapons": [
+                10,
+                20,
+                23,
+                24,
+                28
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Super-heavy Walker, Harbingers of Dread",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 2D6\" suffers D6 mortal wounds."
+                }
+            ],
+            "psyker": {
+                "description": "This model can attempt to manifest two psychic powers in your Psychic phase and attempt to deny one psychic powers in your opponent's Psychic phase. It knows Smite and two psychic powers from the Warp Storm discipline (pg 75)",
+                "powers": [
+                    {
+                        "name": "-",
+                        "rule": ""
+                    },
+                    {
+                        "name": "-",
+                        "rule": ""
+                    }
+                ]
+            },
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "TITANIC",
+                "CORE",
+                "PTERRORSHADES",
+                "ABHORRENT-CLASS",
+                "PSYKER",
+                "KNIGHT ABOMINANT"
+            ],
+            "models": [
+                {
+                    "name": "Knight Abominant",
+                    "points": 430
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Knight Desecrator",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 22,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Desecrator",
+                    "profile": "(13+ wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 2,
+                    "ballisticSkill": 3,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Desecrator",
+                    "profile": "(7-12 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 4,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Desecrator",
+                    "profile": "(1-6 wounds remaining)",
+                    "movement": 6,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 5,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 3
+                }
+            ],
+            "description": "A Knight Desecrator is equipped with: Desecrator laser destructor; diabolus heavy stubber; reaper chainsword; titanic feet",
+            "weapons": [
+                7,
+                10,
+                25,
+                28,
+                29
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Super-heavy Walker, Harbingers of Dread",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Taskmaster (Aura)",
+                    "rule": "While a friendly <DREAD HOUSEHOLD> WAR DOG-CLASS model is within 9\" of this model, each time that friendly model makes a ranged attack, re-roll a hit roll of 1."
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 2D6\" suffers D6 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "TITANIC",
+                "CORE",
+                "ABHORRENT-CLASS",
+                "KNIGHT DESECRATOR"
+            ],
+            "models": [
+                {
+                    "name": "Knight Desecrator",
+                    "points": 400
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Knight Despoiler",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 24,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Despoiler",
+                    "profile": "(13+ wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 3,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Despoiler",
+                    "profile": "(7-12 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 4,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Despoiler",
+                    "profile": "(1-6 wounds remaining)",
+                    "movement": 6,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 5,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 3
+                }
+            ],
+            "description": "A Knight Despoiler is equipped with: daemonbreath meltagun; reaper chainsword; titanic feet; warpstrike claw",
+            "weapons": [
+                3,
+                10,
+                5,
+                9,
+                15,
+                8,
+                13,
+                16,
+                19,
+                25,
+                28,
+                29
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Super-heavy Walker, Harbingers of Dread",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Dread Dominion (Aura)",
+                    "rule": "While a friendly <DREAD HOUSEHOLD> WAR DOG-CLASS model is within 9\" of this model, that friendly model is eligible to perform Heroic Interventions as if it were a CHARACTER."
+                },
+                {
+                    "name": "Engine of Destruction",
+                    "rule": "Each time this model fights, if it is equipped with both a warpstrike claw and a reaper chainsword (including any Relic that replaces such a weapon), and if it made a charge move, was charged or performed a Heroic Intervention this turn, then until that fight is resolved, add 1 to the Attacks characteristic of this model."
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 2D6\" suffers D6 mortal wounds."
+                }
+            ],
+            "wargearOptions": [
+                "This model's daemonbreath meltagun can be replaced with 1 diabolus heavy stubber",
+                "This model's reaper chainsword can be replaced with 1 of the following: 1 daemonbreath thermal cannon, 1 despoiler gatling cannon and 1 heavy darkflamer, 1 despoiler battle cannon and 1 diabolus heavy stubber",
+                "This model's warpstrike claw can be replaced with 1 of the following: 1 daemonbreath thermal cannon, 1 despoiler gatling cannon and 1 heavy darkflamer, 1 despoiler battle cannon and 1 diabolus heavy stubber",
+                "This model can be equipped with one of the following: 1 havoc missile pod; 1 ruinspear rocket pod; 1 twin hellstorm autocannon"
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "TITANIC",
+                "CORE",
+                "ABHORRENT-CLASS",
+                "KNIGHT DESPOILER"
+            ],
+            "models": [
+                {
+                    "name": "Knight Despoiler",
+                    "points": 375,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Daemonbreath meltagun",
+                                "cost": 5
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath meltagun",
+                                    "cost": 5
+                                },
+                                {
+                                    "name": "Diabolus heavy stubber",
+                                    "cost": 0
+                                }
+                            ]
+                        },
+                        {
+                            "selectedOption": {
+                                "name": "Reaper chainsword",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath thermal cannon",
+                                    "cost": 50
+                                },
+                                {
+                                    "name": "Despoiler gatling cannon and 1 heavy darkflamer",
+                                    "cost": 60
+                                },
+                                {
+                                    "name": "Despoiler battle cannon and 1 diabolus heavy stubber",
+                                    "cost": 50
+                                }
+                            ]
+                        },
+                        {
+                            "selectedOption": {
+                                "name": "Warpstrike claw",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "Daemonbreath thermal cannon",
+                                    "cost": 50
+                                },
+                                {
+                                    "name": "Despoiler gatling cannon and 1 heavy darkflamer",
+                                    "cost": 60
+                                },
+                                {
+                                    "name": "Despoiler battle cannon and 1 diabolus heavy stubber",
+                                    "cost": 50
+                                }
+                            ]
+                        },
+                        {
+                            "selectedOption": {
+                                "name": "-",
+                                "cost": 0
+                            },
+                            "options": [
+                                {
+                                    "name": "-",
+                                    "cost": 0
+                                },
+                                {
+                                    "name": "Havoc missile pod",
+                                    "cost": 20
+                                },
+                                {
+                                    "name": "Ruinspear rocket pod",
+                                    "cost": 40
+                                },
+                                {
+                                    "name": "Twin hellstorm autocannon",
+                                    "cost": 20
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Knight Rampager",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 20,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Rampager",
+                    "profile": "(13+ wounds remaining)",
+                    "movement": 12,
+                    "weaponSkill": 2,
+                    "ballisticSkill": 3,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 5,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Rampager",
+                    "profile": "(7-12 wounds remaining)",
+                    "movement": 10,
+                    "weaponSkill": 3,
+                    "ballisticSkill": 4,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 5,
+                    "leadership": 9,
+                    "save": 3
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Rampager",
+                    "profile": "(1-6 wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 5,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 24,
+                    "attacks": 5,
+                    "leadership": 9,
+                    "save": 3
+                }
+            ],
+            "description": "A Knight Rampager is equipped with: diabolus heavy stubber; reaper chainsword; titanic feet; warpstrike claw",
+            "weapons": [
+                10,
+                25,
+                28,
+                29
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Super-heavy Walker, Harbingers of Dread",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Frenzied Rampage (Aura)",
+                    "rule": "While a friendly <DREAD HOUSEHOLD> WAR DOG-CLASS model is within 9\" of this model, each time that friendly model makes a melee attack, re-roll a hit roll of 1."
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 2D6\" suffers D6 mortal wounds."
+                }
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "TITANIC",
+                "CORE",
+                "ABHORRENT-CLASS",
+                "KNIGHT RAMPAGER"
+            ],
+            "models": [
+                {
+                    "name": "Knight Rampager",
+                    "points": 400
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Knight Tyrant",
+            "codex": "Chaos Knights",
+            "role": "LORD OF WAR",
+            "power": 22,
+            "statistics": [
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Tyrant",
+                    "profile": "(15+ wounds remaining)",
+                    "movement": 8,
+                    "weaponSkill": 4,
+                    "ballisticSkill": 3,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 28,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 2
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Tyrant",
+                    "profile": "(8-14 wounds remaining)",
+                    "movement": 6,
+                    "weaponSkill": 5,
+                    "ballisticSkill": 4,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 28,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 2
+                },
+                {
+                    "numberMin": 1,
+                    "numberMax": 1,
+                    "name": "Knight Tyrant",
+                    "profile": "(1-7 wounds remaining)",
+                    "movement": 4,
+                    "weaponSkill": 6,
+                    "ballisticSkill": 5,
+                    "strength": 8,
+                    "toughness": 8,
+                    "wounds": 28,
+                    "attacks": 4,
+                    "leadership": 9,
+                    "save": 2
+                }
+            ],
+            "description": "A Knight Tyrant is equipped with: brimstone volcano lance; ectoplasma decimator; 4 gheiststrike missiles; 2 twin daemonbreath meltaguns; twin desecrator cannon; titanic feet",
+            "weapons": [
+                2,
+                6,
+                11,
+                12,
+                17,
+                18,
+                22,
+                28
+            ],
+            "abilities": [
+                {
+                    "name": "Ion Shields, Super-heavy Walker, Harbingers of Dread",
+                    "rule": "(pg 96-99)"
+                },
+                {
+                    "name": "Explodes",
+                    "rule": "When a model in this unit is destroyed, roll two D6 before removing it from play. If either of the dice are a 6, it explodes, and each unit within 2D6\" suffers D6 mortal wounds (if both of the dice are a 6, each unit within 3D6\" suffers D6 mortal wounds instead)."
+                }
+            ],
+            "wargearOptions": [
+                "This model's brimstone volcano lance and ectoplasma decimator can be replaced with 1 darkflame cannon and 1 warpshock harpoon.",
+                "This model's 4 ghieststrike missiles and twin desecrator cannon can be replaced with 2 ghieststrike missiles and 2 twin desecrator cannons."
+            ],
+            "factionKeywords": [
+                "CHAOS",
+                "CHAOS KNIGHTS",
+                "<QUESTOR TRAITORIS>",
+                "<DREAD HOUSEHOLD>"
+            ],
+            "keywords": [
+                "VEHICLE",
+                "TITANIC",
+                "TYRANT-CLASS",
+                "KNIGHT TYRANT"
+            ],
+            "models": [
+                {
+                    "name": "Knight Tyrant",
+                    "points": 585,
+                    "weaponOptions": [
+                        {
+                            "selectedOption": {
+                                "name": "Brimstone volcano lance and Ectoplasma decimator",
+                                "cost": 10
+                            },
+                            "options": [
+                                {
+                                    "name": "Brimstone volcano lance and Ectoplasma decimator",
+                                    "cost": 10
+                                },
+                                {
+                                    "name": "Darkflame cannon and Warpshock harpoon",
+                                    "cost": 0
+                                }
+                            ]
+                        },
+                        {
+                            "selectedOption": {
+                                "name": "4 Ghieststrike missiles and 1 Twin desecrator cannon",
+                                "cost": 15
+                            },
+                            "options": [
+                                {
+                                    "name": "4 Ghieststrike missiles and 1 Twin desecrator cannon",
+                                    "cost": 15
+                                },
+                                {
+                                    "name": "2 Ghieststrike missiles and 2 Twin desecrator cannons",
+                                    "cost": 30
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "armoury": [
+        {
+            "id": 1,
+            "name": "Avenger chaincannon",
+            "range": 36,
+            "type": "Assault 12",
+            "strength": "6",
+            "armorPenetration": "-2",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 2,
+            "name": "Brimstone volcano lance",
+            "range": 80,
+            "type": "Heavy D3",
+            "strength": "16",
+            "armorPenetration": "-5",
+            "damage": "D6+8",
+            "abilities": "Blast."
+        },
+        {
+            "id": 3,
+            "name": "Daemonbreath meltagun",
+            "range": 12,
+            "type": "Assault 1",
+            "strength": "8",
+            "armorPenetration": "-4",
+            "damage": "D6",
+            "abilities": "Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2."
+        },
+        {
+            "id": 4,
+            "name": "Daemonbreath spear",
+            "range": 30,
+            "type": "Heavy 2",
+            "strength": "9",
+            "armorPenetration": "-4",
+            "damage": "D6",
+            "abilities": "Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2."
+        },
+        {
+            "id": 5,
+            "name": "Deamonbreath thermal cannon",
+            "range": 30,
+            "type": "Heavy 2D3",
+            "strength": "9",
+            "armorPenetration": "-4",
+            "damage": "D6+2",
+            "abilities": "Blast. Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+4."
+        },
+        {
+            "id": 6,
+            "name": "Darkflame cannon",
+            "range": 18,
+            "type": "Heavy 3D6",
+            "strength": "7",
+            "armorPenetration": "-2",
+            "damage": "2",
+            "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
+        },
+        {
+            "id": 7,
+            "name": "Desecrator laser destructor",
+            "range": 72,
+            "type": "Heavy 2",
+            "strength": "14",
+            "armorPenetration": "-5",
+            "damage": "D3+6",
+            "abilities": "-"
+        },
+        {
+            "id": 8,
+            "name": "Despoiler battle cannon",
+            "range": 72,
+            "type": "Heavy 2D6",
+            "strength": "8",
+            "armorPenetration": "-2",
+            "damage": "3",
+            "abilities": "Blast."
+        },
+        {
+            "id": 9,
+            "name": "Despoiler gatling cannon",
+            "range": 36,
+            "type": "Heavy 12",
+            "strength": "6",
+            "armorPenetration": "-2",
+            "damage": "2",
+            "abilities": "-"
+        },
+        {
+            "id": 10,
+            "name": "Diabolus heavy stubber",
+            "range": 36,
+            "type": "Heavy 4",
+            "strength": "5",
+            "armorPenetration": "0",
+            "damage": "1",
+            "abilities": "-"
+        },
+        {
+            "id": 11,
+            "name": "Ectoplasma decimator",
+            "description": "Before selecting targets, select one of the profiles below to make attacks with",
+            "profile": [
+                {
+                    "name": "- Standard",
+                    "range": 48,
+                    "type": "Heavy 2D6",
+                    "strength": "8",
+                    "armorPenetration": "-4",
+                    "damage": "2",
+                    "abilities": "Blast."
+                },
+                {
+                    "name": "- Supercharge",
+                    "range": 48,
+                    "type": "Heavy 2D6",
+                    "strength": "9",
+                    "armorPenetration": "-4",
+                    "damage": "3",
+                    "abilities": "Blast. Each time a unmodified hit roll of 1 is made for an attack with this weapon profile, the bearer suffers 2 mortal wounds after shooting with this weapon."
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Gheiststrike missile",
+            "range": 48,
+            "type": "Heavy 1",
+            "strength": "10",
+            "armorPenetration": "-4",
+            "damage": "D6",
+            "abilities": "Each time the bearer is selected to shoot, it can only make attacks with one gheiststrike missile, and it can only shoot each gheiststrike missile it is equipped with once per battle. Each time an attack is made with this weapon, invulnerable saving throws cannot be made against that attack."
+        },
+        {
+            "id": 13,
+            "name": "Havoc missile pod",
+            "range": 72,
+            "type": "Heavy D6",
+            "strength": "5",
+            "armorPenetration": "-1",
+            "damage": "2",
+            "abilities": "Blast. This weapon can target units that are not visible to the bearer."
+        },
+        {
+            "id": 14,
+            "name": "Havoc multi-launcher",
+            "range": 48,
+            "type": "Heavy D6",
+            "strength": "5",
+            "armorPenetration": "0",
+            "damage": "1",
+            "abilities": "Blast. This weapon can target units that are not visible to the bearer."
+        },
+        {
+            "id": 15,
+            "name": "Heavy darkflamer",
+            "range": 12,
+            "type": "Heavy D6",
+            "strength": "5",
+            "armorPenetration": "-1",
+            "damage": "1",
+            "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
+        },
+        {
+            "id": 16,
+            "name": "Ruinspear rocket pod",
+            "range": 48,
+            "type": "Heavy 3",
+            "strength": "8",
+            "armorPenetration": "-2",
+            "damage": "D6",
+            "abilities": "-"
+        },
+        {
+            "id": 17,
+            "name": "Twin daemonbreath meltagun",
+            "range": 12,
+            "type": "Assault 2",
+            "strength": "8",
+            "armorPenetration": "-4",
+            "damage": "D6",
+            "abilities": "Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2."
+        },
+        {
+            "id": 18,
+            "name": "Twin desecrator cannon",
+            "range": 36,
+            "type": "Heavy 2D3",
+            "strength": "7",
+            "armorPenetration": "-1",
+            "damage": "2",
+            "abilities": "Blast."
+        },
+        {
+            "id": 19,
+            "name": "Twin hellstorm autocannon",
+            "range": 48,
+            "type": "Heavy 4",
+            "strength": "7",
+            "armorPenetration": "-1",
+            "damage": "2",
+            "abilities": "Each time an attack is made with this weapon against an AIRCRAFT unit, add 1 to that attack's hit roll."
+        },
+        {
+            "id": 20,
+            "name": "Volkite combustor",
+            "range": 30,
+            "type": "Heavy 6",
+            "strength": "10",
+            "armorPenetration": "-1",
+            "damage": "3",
+            "abilities": "Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 3 mortal wounds on the target in addition to any normal damage."
+        },
+        {
+            "id": 21,
+            "name": "War Dog Autocannon",
+            "range": 60,
+            "type": "Heavy 2D3",
+            "strength": "7",
+            "armorPenetration": "-2",
+            "damage": "3",
+            "abilities": "-"
+        },
+        {
+            "id": 22,
+            "name": "Warpshock harpoon",
+            "range": 18,
+            "type": "Heavy 1",
+            "strength": "16",
+            "armorPenetration": "-6",
+            "damage": "10",
+            "abilities": "Each time an attack is made with this weaponn against a MONSTER or VEHICLE unit (excluding AIRCRAFT units), add 1 to that attack's hit roll. Each time an attack made with this weapon is allocated to a model, that model's unit suffers 3 mortal wounds in addition to any normal damage."
+        },
+        {
+            "id": 23,
+            "name": "Balemace",
+            "range": 0,
+            "type": "Melee",
+            "strength": "User",
+            "armorPenetration": "-2",
+            "damage": "2",
+            "abilities": "Each time the bearer fights, it makes D3 additional attacks with this weapon."
+        },
+        {
+            "id": 24,
+            "name": "Electroscourge",
+            "range": 0,
+            "type": "Melee",
+            "strength": "User",
+            "armorPenetration": "-2",
+            "damage": "3",
+            "abilities": "Each time an attack is made with this weapon, make 3 hit rolls instead of 1."
+        },
+        {
+            "id": 25,
+            "name": "Reaper chainsword",
+            "description": "Before selecting targets, select one of the profiles below to make attacks with",
+            "profile": [
+                {
+                    "name": "- Strike",
+                    "range": 0,
+                    "type": "Melee",
+                    "strength": "+6",
+                    "armorPenetration": "-4",
+                    "damage": "6",
+                    "abilities": "-"
+                },
+                {
+                    "name": "- Sweep",
+                    "range": 0,
+                    "type": "Melee",
+                    "strength": "User",
+                    "armorPenetration": "-3",
+                    "damage": "2",
+                    "abilities": "Each time an attack is made with this weapon, make 3 hit rolls instead of 1."
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Reaper chaintalon",
+            "description": "Before selecting targets, select one of the profiles below to make attacks with",
+            "profile": [
+                {
+                    "name": "- Strike",
+                    "range": 0,
+                    "type": "Melee",
+                    "strength": "+4",
+                    "armorPenetration": "-4",
+                    "damage": "3",
+                    "abilities": "-"
+                },
+                {
+                    "name": "- Sweep",
+                    "range": 0,
+                    "type": "Melee",
+                    "strength": "User",
+                    "armorPenetration": "-3",
+                    "damage": "1",
+                    "abilities": "Each time an attack is made with this weapon, make 2 hit rolls instead of 1."
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Slaughterclaw",
+            "range": 0,
+            "type": "Melee",
+            "strength": "x2",
+            "armorPenetration": "-3",
+            "damage": "D3+3",
+            "abilities": "-"
+        },
+        {
+            "id": 28,
+            "name": "Titanic feet",
+            "range": 0,
+            "type": "Melee",
+            "strength": "User",
+            "armorPenetration": "-2",
+            "damage": "2",
+            "abilities": "-"
+        },
+        {
+            "id": 29,
+            "name": "Warpstrike claw",
+            "description": "Before selecting targets, select one of the profiles below to make attacks with",
+            "profile": [
+                {
+                    "name": "- Strike",
+                    "range": 0,
+                    "type": "Melee",
+                    "strength": "x2",
+                    "armorPenetration": "-3",
+                    "damage": "8",
+                    "abilities": "-"
+                },
+                {
+                    "name": "- Sweep",
+                    "range": 0,
+                    "type": "Melee",
+                    "strength": "+2",
+                    "armorPenetration": "-2",
+                    "damage": "3",
+                    "abilities": "Each time an attack is made with this weapon, make 2 hit rolls instead of 1."
+                }
+            ]
+        }
+    ]
+}

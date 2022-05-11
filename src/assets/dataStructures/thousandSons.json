@@ -1,6 +1,9 @@
 {
-    "name": "Thousand Sons",
-    "superFaction": "CHAOS",
+    "config": {
+        "name": "Thousand Sons",
+        "superFaction": "CHAOS",
+        "fileName": "thousandSons.json"
+    },
     "armyWideRules": [
         {
             "name": "Brotherhood of Sorcerers",
@@ -11,16 +14,16 @@
             "rule": "All RUBRIC MARINES, SCARAB OCCULT TERMINATORS and BRAY units in THOUSAND SONS Detachments gain the Objective Secured ability"
         }
     ],
-    "subFaction": [
+    "subFactions": [
         {
             "name": "Cult of Mutation",
             "psychicPower": {
                 "name": "Warp Reality",
-                "rule": "Malediction: Warp Reality has a warp charge value of 6. If manife..."
+                "rule": "Malediction: Warp Reality has a warp charge value of 6. If manifested, select one terrain feature within 24\" of and visible to this PSYKER, then select one enemy unit within 3\" of that terrain feature. Until the start of your next Psychic phase, halve that unit's Move characteristic and subtract 1 from Advance rolls and charge rolls made for it"
             },
             "trait": {
                 "name": "Touch of Vicissitude",
-                "rule": "Each time a melee attack is made by thi..."
+                "rule": "Each time a melee attack is made by this WARLORD, an unmodified hit roll of 6 inflicts 1 mortal wound on the target in addition to any other damage"
             },
             "relic": {
                 "name": "Exalted Mutation",
@@ -31,17 +34,49 @@
             "name": "Cult of Prophecy",
             "psychicPower": {
                 "name": "Divine the Future",
-                "rule": "Blessing: Divine the Future has a warp charge of 6. If manife..."
+                "rule": "Blessing: Divine the Future has a warp charge of 6. If manifested, roll one D6 and set it to one side. Until the start of your next Psychic phase, you can use that dice roll to replace a single dice rolled for a hit roll, wound roll, Advance roll, charge roll, Psychic test, Deny the Witch test or Morale test for a CULT OF PROPHECY unit from your army"
             },
             "trait": {
                 "name": "Guided by the Whispers",
-                "rule": "Once per turn, when this WARLORD is selected as the target..."
+                "rule": "Once per turn, when this WARLORD is selected as the target of a charge, before the charge roll is made and after firing any Overwatch, it can make a normal Move up to 6\""
             },
             "relic": {
                 "name": "Oraculae Brazier",
-                "rule": "In your Command phase, select one CULT OF PROPHECY CORE or..."
+                "rule": "In your Command phase, select one CULT OF PROPHECY CORE or CULT OF PROPHECY CHARACTER unit within 6\" of the bearer. Until the start of your next Command phase, each time that unit is selected to shoot or fight, you can re-roll one hit roll, one wound roll, and one damage roll when resolving that unit's attacks"
+            }
+        },
+        {
+            "name": "Cult of Time",
+            "psychicPower": {
+                "name": "Time Flux",
+                "rule": "Blessing: Time Flux has a warp charge of 6. If manifested, select one friendly CULT OF TIME INFANTRY unit within 6\" of this PSYKER. You can return one destroyed model from that unit to the battlefield with all of its wounds remaining, placing it in unit coherency"
+            },
+            "trait": {
+                "name": "Immaterial Echo",
+                "rule": "In your Psychic phase, if this WARLORD manifests a psychic power with a Psychic test result of 9+, this WARLORD can attempt to manifest one additional psychic power that phase. When attempting to manifest that additional psychic power, if the Psychic test is passed, it cannot be denied. Only one additional psychic power can be manifested as a result of this Warlord Trait per phase"
+            },
+            "relic": {
+                "name": "Hourglass of Manat",
+                "rule": "The first time the bearer is destroyed, keep it to one side; at the end of the current phase, set the bearer back up again, as close as possible to its previous position and more than 1\" away from any enemy models, with D3 wounds remaining"
+            }
+        },
+        {
+            "name": "Cult of Scheming",
+            "psychicPower": {
+                "name": "Seeded Strategy",
+                "rule": "Blessing: Seeded Strategy has a warp charge of 6. If manife..."
+            },
+            "trait": {
+                "name": "Grand Schemer (Aura)",
+                "rule": "While they are within 3\" of this WARLORD, friendly CULT OF..."
+            },
+            "relic": {
+                "name": "Cha'qi'thl's Theorem",
+                "rule": "Once per battle, in any phase, if the bearer is on the battle..."
             }
         }
+    ],
+    "armyOfRenown": [
     ],
     "traits": [
         {
@@ -1014,7 +1049,7 @@
             "range": 24,
             "type": "Rapid Fire 1",
             "strength": "3",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "-"
         },
@@ -1024,7 +1059,7 @@
             "range": 12,
             "type": "Pistol 1",
             "strength": "3",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "-"
         },
@@ -1034,7 +1069,7 @@
             "range": 18,
             "type": "Assault 2D3",
             "strength": "6",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "2",
             "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
         },
@@ -1044,7 +1079,7 @@
             "range": 72,
             "type": "Heavy D6",
             "strength": "8",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "3",
             "abilities": "Blast"
         },
@@ -1054,7 +1089,7 @@
             "range": 24,
             "type": "Heavy D6",
             "strength": "10",
-            "armourPiercing": "-3",
+            "armorPenetration": "-3",
             "damage": "D6",
             "abilities": "Blast"
         },
@@ -1064,7 +1099,7 @@
             "range": 36,
             "type": "Heavy D3",
             "strength": "7",
-            "armourPiercing": "-3",
+            "armorPenetration": "-3",
             "damage": "3",
             "abilities": "-"
         },
@@ -1074,7 +1109,7 @@
             "range": 30,
             "type": "Assault 1",
             "strength": "5",
-            "armourPiercing": "-1",
+            "armorPenetration": "-1",
             "damage": "1",
             "abilities": "Each time you select a target for this weapon, you can ignore the Look Out, Sir rule. Each time an attack is made with this weapon, an unmodified hit roll of 2+ is always successful"
         },
@@ -1084,7 +1119,7 @@
             "range": 12,
             "type": "Assault D6",
             "strength": "4",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
         },
@@ -1094,7 +1129,7 @@
             "range": 6,
             "type": "Grenade D6",
             "strength": "3",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "Blast"
         },
@@ -1104,7 +1139,7 @@
             "range": 36,
             "type": "Heavy 4",
             "strength": "8",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "2",
             "abilities": "-"
         },
@@ -1114,7 +1149,7 @@
             "range": 36,
             "type": "Heavy 3",
             "strength": "4",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "-"
         },
@@ -1124,7 +1159,7 @@
             "range": 12,
             "type": "Pistol 1",
             "strength": "4",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "1",
             "abilities": "-"
         },
@@ -1134,7 +1169,7 @@
             "range": 24,
             "type": "Rapid Fire 1",
             "strength": "4",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "1",
             "abilities": "-"
         },
@@ -1144,7 +1179,7 @@
             "range": 24,
             "type": "Rapid Fire 2",
             "strength": "4",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "1",
             "abilities": "-"
         },
@@ -1154,7 +1189,7 @@
             "range": 6,
             "type": "Grenade 1",
             "strength": "6",
-            "armourPiercing": "-1",
+            "armorPenetration": "-1",
             "damage": "D3",
             "abilities": "-"
         },
@@ -1168,7 +1203,7 @@
                     "range": 12,
                     "type": "Pistol 1",
                     "strength": "7",
-                    "armourPiercing": "-3",
+                    "armorPenetration": "-3",
                     "damage": "1",
                     "abilities": "-"
                 },
@@ -1177,7 +1212,7 @@
                     "range": 12,
                     "type": "Pistol 1",
                     "strength": "8",
-                    "armourPiercing": "-3",
+                    "armorPenetration": "-3",
                     "damage": "2",
                     "abilities": "If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon"
                 }
@@ -1189,7 +1224,7 @@
             "range": 18,
             "type": "Assault 2",
             "strength": "3",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "-"
         },
@@ -1199,7 +1234,7 @@
             "range": 24,
             "type": "Heavy 5",
             "strength": "6",
-            "armourPiercing": "-3",
+            "armorPenetration": "-3",
             "damage": "1",
             "abilities": "-"
         },
@@ -1209,7 +1244,7 @@
             "range": 12,
             "type": "Pistol D6",
             "strength": "3",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "1",
             "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
         },
@@ -1219,7 +1254,7 @@
             "range": 12,
             "type": "Assault D6",
             "strength": "4",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "1",
             "abilities": "Each time an attack is made with this weapon, that attack automatically hits the target"
         },
@@ -1229,7 +1264,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "+3",
-            "armourPiercing": "-1",
+            "armorPenetration": "-1",
             "damage": "3",
             "abilities": "-"
         },
@@ -1239,7 +1274,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "User",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "Each time the bearer fights, it makes 1 additional attack with this weapon"
         },
@@ -1249,7 +1284,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "+2",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "3",
             "abilities": "-"
         },
@@ -1259,7 +1294,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "4",
-            "armourPiercing": "0",
+            "armorPenetration": "0",
             "damage": "1",
             "abilities": "Each time the bearer fights, it makes 1 additional attack with this weapon"
         },
@@ -1269,7 +1304,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "+3",
-            "armourPiercing": "-1",
+            "armorPenetration": "-1",
             "damage": "D3",
             "abilities": "-"
         },
@@ -1279,7 +1314,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "+1",
-            "armourPiercing": "-3",
+            "armorPenetration": "-3",
             "damage": "3",
             "abilities": "-"
         },
@@ -1289,7 +1324,7 @@
             "range": 0,
             "type": "Melee",
             "strength": "User",
-            "armourPiercing": "-2",
+            "armorPenetration": "-2",
             "damage": "2",
             "abilities": "Each time the bearer fights, it makes 1 additional attack with this weapon"
         }

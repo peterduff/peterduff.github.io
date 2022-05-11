@@ -5,8 +5,8 @@ import {AppComponent} from './app.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {UtilityBarComponent} from './components/utility-bar/utility-bar.component';
 import {UnitViewComponent} from './components/unit-view/unit-view.component';
-import {CodexBarComponent} from './components/codex-bar/codex-bar.component';
-import {ArmyBarComponent} from './components/army-bar/army-bar.component';
+import {LeftBarComponent} from './components/left-bar/left-bar.component';
+import {RightBarComponent} from './components/right-bar/right-bar.component';
 import {TextFilterPipe} from './pipes/text-filter.pipe';
 import {ModalComponent} from './components/modal/modal.component';
 import {ArmyService} from "./services/army.service";
@@ -18,6 +18,7 @@ import { AlphabeticalPipe } from './pipes/alphabetical.pipe';
 import { UnitTypePipe } from './pipes/unit-type.pipe';
 import {CalculationService} from "./services/calculation.service";
 import {CodexViewComponent} from "./components/codex-view/codex-view.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -26,8 +27,8 @@ import {CodexViewComponent} from "./components/codex-view/codex-view.component";
         UtilityBarComponent,
         UnitViewComponent,
         CodexViewComponent,
-        CodexBarComponent,
-        ArmyBarComponent,
+        LeftBarComponent,
+        RightBarComponent,
         ModalComponent,
         TextFilterPipe,
         AlphabeticalPipe,
@@ -36,7 +37,8 @@ import {CodexViewComponent} from "./components/codex-view/codex-view.component";
     imports: [
         BrowserModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        NgbModule
     ],
     providers: [
         ArmyService,

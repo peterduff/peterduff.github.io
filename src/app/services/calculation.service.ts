@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {Model, Unit, Wargear, WeaponOption} from "../models/unit";
+import {Detachment} from "../models/army";
 
 @Injectable({
     providedIn: 'root'
@@ -8,20 +10,20 @@ export class CalculationService {
     constructor() {
     }
 
-    calculateUnitPointsCost(unit: any): number {
+    calculateUnitPointsCost(unit: Unit): number {
         let cost = 0;
 
         if (unit.wargear) {
-            unit.wargear.forEach((wargear: any) => {
+            unit.wargear.forEach((wargear: Wargear) => {
                 cost += wargear.selectedOption.cost;
             });
         }
 
-        unit.models.forEach((model: any) => {
+        unit.models.forEach((model: Model) => {
             cost += model.points;
             if (model.weaponOptions) {
-                model.weaponOptions.forEach((item: any) => {
-                    cost += item.selectedOption.cost;
+                model.weaponOptions.forEach((weaponOption: WeaponOption) => {
+                    cost += weaponOption.selectedOption.cost;
                 });
             }
         });
@@ -29,12 +31,12 @@ export class CalculationService {
         return cost;
     }
 
-    calculateWeaponsAggregation(unit: any, name: string): number {
+    calculateWeaponsAggregation(unit: Unit, name: string): number {
         let amount = 0;
 
-        unit.models.forEach((model: any) => {
-            model.weaponOptions.forEach((weapon: any) => {
-                if (weapon.selectedOption.name === name) {
+        unit.models.forEach((model: Model) => {
+            model.weaponOptions.forEach((weaponOption: WeaponOption) => {
+                if (weaponOption.selectedOption.name === name) {
                     amount++;
                 }
             });
@@ -43,20 +45,22 @@ export class CalculationService {
         return amount;
     }
 
-    calculateMultipleUnitsPointsCost(units: any): number {
+    calculateMultipleUnitsPointsCost(units: Unit[] | undefined): number {
         let cost = 0;
 
-        units.forEach((unit: any) => {
-            cost += this.calculateUnitPointsCost(unit);
-        });
+        if (units) {
+            units.forEach((unit: Unit) => {
+                cost += this.calculateUnitPointsCost(unit);
+            });
+        }
 
         return cost;
     }
 
-    calculateArmyPointsCost(detachments: any): number {
+    calculateArmyPointsCost(detachments: Detachment[]): number {
         let cost = 0;
 
-        detachments.forEach((detachment: any) => {
+        detachments.forEach((detachment: Detachment) => {
             cost += this.calculateMultipleUnitsPointsCost(detachment.units);
         });
 

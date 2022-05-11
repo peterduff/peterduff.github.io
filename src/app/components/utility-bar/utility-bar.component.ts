@@ -3,8 +3,11 @@ import {ModalService} from "../../services/modal.service";
 import {CodexService} from "../../services/codex.service";
 import {Subscription} from "rxjs";
 import {ArmyService} from "../../services/army.service";
-import {Army, Detachment} from "../../models/army";
+import {Army, Config, Detachment, SubFaction} from "../../models/army";
 import {DomSanitizer} from "@angular/platform-browser";
+import {Guid} from "guid-typescript";
+import {Core} from "../../models/core";
+import {Codex} from "../../models/codex";
 
 @Component({
     selector: 'app-utility-bar',
@@ -12,15 +15,45 @@ import {DomSanitizer} from "@angular/platform-browser";
     styleUrls: ['./utility-bar.component.scss']
 })
 export class UtilityBarComponent implements OnInit {
-    core: any;
+
+    core!: Core;
     coreSubscription: Subscription;
-    codexes: any;
+    codexes!: Codex[];
     codexesSubscription: Subscription;
-    army: any;
+    army!: Army;
     armySubscription: Subscription;
 
-    newArmy: any;
-    downloadJsonHref: any;
+    newArmy!: Army;
+    downloadJsonHref!: any;
+
+    defaultNameList = [
+        'The Aggressive Aardvarks',
+        'The Brutish Belligerents',
+        'The Crazy Cadavers',
+        'The Dangerous Divas',
+        'The Esoteric Evangelists',
+        'The Ferocious Flames',
+        'The Great Goons',
+        'The Haunted Heroes',
+        'The Idolent Iscariots',
+        'The Jeering Jokers',
+        'The Kleptomaniac Kings',
+        'The Lecherous Lemurs',
+        'The Mindful Mindflayers',
+        'The Nautious Nurses',
+        'The Obsolete Obelisks',
+        'The Pestilent Plague',
+        'The Querky Quarks',
+        'The Radiant Redeemers',
+        'The Silent Slayers',
+        'The Titanic Tossers',
+        'The Ubiquitous Undertakers',
+        'The Vexatious Violators',
+        'The Wandering Warriors',
+        'The Xenogenic Xenocrysts',
+        'The Yeetful Yoloers',
+        'The Zionistic Zebras'];
+
 
     constructor(private modalService: ModalService, private codexService: CodexService, public armyService: ArmyService, private sanitizer: DomSanitizer) {
         this.coreSubscription = this.codexService.getCore().subscribe( data => this.core = data);
@@ -49,7 +82,13 @@ export class UtilityBarComponent implements OnInit {
 
     // NEW ARMY FUNCTIONS
     addDetachment(): void {
-        this.newArmy.detachments.push(new Detachment(this.core.armies[0], this.core.detachments[0], []));
+        // Change this to default load specific army for testing
+        this.newArmy.detachments.push(
+            new Detachment(
+                Guid.raw(),
+                new Config(this.core.armies[1].name, this.core.armies[1].superFaction, new SubFaction(''), this.core.armies[1].fileName),
+                this.core.detachments[0],
+                []));
         this.armyService.calculateArmyCP();
     }
 
@@ -59,6 +98,10 @@ export class UtilityBarComponent implements OnInit {
     }
 
     createArmy(): void {
+
+        if (this.newArmy.name === '') {
+            this.newArmy.name = this.defaultNameList[Math.floor(Math.random() * this.defaultNameList.length)];
+        }
         this.armyService.setArmy(this.newArmy);
         this.findCodexes();
         this.resetNewArmy();
@@ -66,7 +109,7 @@ export class UtilityBarComponent implements OnInit {
 
     findCodexes(): void {
         this.army.detachments.forEach((detachment: Detachment) => {
-            this.codexService.httpGetCodex(detachment.armyType.fileName).subscribe(data => {
+            this.codexService.httpGetCodex(detachment.config.fileName).subscribe(data => {
                 this.codexes.push(data);
                 this.codexService.setCodexes(this.codexes);
             });
@@ -74,8 +117,12 @@ export class UtilityBarComponent implements OnInit {
     }
 
     resetNewArmy(): void {
-        this.newArmy = new Army('The Brazen Badgers',0, this.core.battleSize[1].commandPoints, this.core.battleSize[1], []);
+        this.newArmy = new Army('',0, this.core.battleSize[1].commandPoints, this.core.battleSize[1], []);
         this.addDetachment();
+    }
+
+    compare(item1: any, item2: any) {
+        return item1 && item2 ? item1.name === item2.name : item1 === item2;
     }
 
     updateGameSize(points: number): void {

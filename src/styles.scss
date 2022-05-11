@@ -88,10 +88,22 @@ button, input {
     }
 }
 
+select {
+    &:focus, &:active {
+        border: none;
+        box-shadow: none;
+        outline: none !important;
+    }
+}
+
 span.bolder {
     font-weight: 400;
 }
 
 h3, h4 {
     font-weight: 300;
+}
+
+ngb-tooltip-window.tooltip {
+    font-size: 1.2rem;
 }

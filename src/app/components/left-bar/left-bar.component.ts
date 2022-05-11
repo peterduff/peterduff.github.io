@@ -2,30 +2,31 @@ import {Component, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {CodexService} from "../../services/codex.service";
 import {ArmyService} from "../../services/army.service";
-import {Detachment} from "../../models/army";
+import {Army, Config, Detachment, SubFaction} from "../../models/army";
 import {Guid} from "guid-typescript";
 import {ModalService} from "../../services/modal.service";
 import {CalculationService} from "../../services/calculation.service";
+import {Core} from "../../models/core";
+import {Codex} from "../../models/codex";
+import {Unit} from "../../models/unit";
 
 @Component({
-    selector: 'app-codex-bar',
-    templateUrl: './codex-bar.component.html',
-    styleUrls: ['./codex-bar.component.scss']
+    selector: 'app-left-bar',
+    templateUrl: './left-bar.component.html',
+    styleUrls: ['./left-bar.component.scss']
 })
-export class CodexBarComponent implements OnInit {
+export class LeftBarComponent implements OnInit {
 
     textFilter: string = '';
 
-    core: any;
+    core!: Core;
     coreSubscription: Subscription;
-    codexes: any;
+    codexes!: Codex[];
     codexesSubscription: Subscription;
-    army: any;
+    army!: Army;
     armySubscription: Subscription;
-    activeUnit: any;
+    activeUnit: Unit | undefined;
     activeUnitSubscription: Subscription;
-    detachmentIndex: any;
-    detachmentIndexSubscription: Subscription;
 
     constructor(private codexService: CodexService,
                 private armyService: ArmyService,
@@ -34,10 +35,7 @@ export class CodexBarComponent implements OnInit {
         this.coreSubscription = this.codexService.getCore().subscribe( data => this.core = data);
         this.codexesSubscription = this.codexService.getCodexes().subscribe(data => this.codexes = data);
         this.armySubscription = this.armyService.getArmy().subscribe(data => this.army = data);
-        this.activeUnitSubscription = this.armyService.getActiveUnit().subscribe(data => {
-            this.activeUnit = data;
-        });
-        this.detachmentIndexSubscription = this.armyService.getDetachmentIndex().subscribe(data => this.detachmentIndex = data);
+        this.activeUnitSubscription = this.armyService.getActiveUnit().subscribe(data => this.activeUnit = data);
     }
 
     ngOnInit(): void {
@@ -56,7 +54,12 @@ export class CodexBarComponent implements OnInit {
     }
 
     addDetachment(): void {
-        this.army.detachments.push(new Detachment(this.core.armies[0], this.core.detachments[0], []));
+        this.army.detachments.push(
+            new Detachment(
+                Guid.raw(),
+                new Config(this.core.armies[0].name, this.core.armies[0].superFaction, new SubFaction(''), this.core.armies[0].fileName),
+                this.core.detachments[0],
+                []));
         this.armyService.calculateArmyCP();
     }
 
@@ -69,7 +72,7 @@ export class CodexBarComponent implements OnInit {
 
     }
 
-    addUnit(detachment: any, unit: any) {
+    addUnit(detachment: Detachment, unit: Unit) {
         let newUnit = this.cloneObject(unit);
         newUnit.uuid = Guid.raw();
         detachment.units.push(newUnit);
@@ -85,20 +88,20 @@ export class CodexBarComponent implements OnInit {
         this.armyService.setArmy(this.army);
     }
 
-    setDetachmentIndex(index: any) {
-        this.armyService.setDetachmentIndex(index);
+    findCodex(name: string): Codex {
+        return this.codexes.find((item: Codex) => item.config.name === name)!;
     }
 
-    findCodex(name: string): any {
-        return this.codexes.find((item: any) => item.name === name)
-    }
-
-    setActiveUnit(unit: any): void {
+    setActiveUnit(unit: Unit): void {
         this.armyService.setActiveUnit(unit);
     }
 
-    calculatePoints(unit: any): number {
+    calculatePoints(unit: Unit): number {
         return this.calculationService.calculateUnitPointsCost(unit);
+    }
+
+    compare(item1: any, item2: any) {
+        return item1 && item2 ? item1.name === item2.name : item1 === item2;
     }
 
     cloneObject(object: any): any {

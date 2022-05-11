@@ -1,5 +1,5 @@
-<nav *ngIf="army" id="codex-bar">
-    <div class="position-fixed codex-bar">
+<nav *ngIf="army" id="left-bar">
+    <div class="position-fixed left-bar">
         <div class="row border-0 g-0">
             <div class="col">
                 <h3 class="p-3 mb-0">{{army.detachments.length}} Detachment{{army.detachments.length > 1 ? 's' : ''}}</h3>
@@ -12,17 +12,17 @@
             <input type="search" class="searchbar py-2 px-3" [(ngModel)]="textFilter" placeholder="Search...">
         </div>
         <ng-container *ngFor="let detachment of army.detachments; let index = index">
-            <ng-container *ngIf="findCodex(detachment.armyType.name)">
+            <ng-container *ngIf="findCodex(detachment.config.name)">
                 <div class="row detachment border-0 g-0">
                     <div class="col">
-                        <h3 class="p-3 mb-0">{{detachment.armyType.name}} <span class="ps-1">{{detachment.detachmentType.name}}</span></h3>
+                        <h3 class="p-3 mb-0">{{detachment.config.name}} <span class="ps-1">{{detachment.detachmentType.name}}</span></h3>
                     </div>
                     <div class="col-3 text-end">
                         <h3 class="p-3 mb-0"><span></span></h3>
                     </div>
                 </div>
-                <div *ngFor="let unit of findCodex(detachment.armyType.name).units | textFilter:textFilter" class="row g-0 unit"
-                     [class.active]="(activeUnit?.id === unit?.id) && (!activeUnit?.uuid) && (index === detachmentIndex)" (click)="setActiveUnit(unit); setDetachmentIndex(index)">
+                <div *ngFor="let unit of findCodex(detachment.config.name).units | textFilter:textFilter" class="row g-0 unit"
+                     [class.active]="(activeUnit?.id === unit?.id) && (!activeUnit?.uuid)" (click)="setActiveUnit(unit)">
                     <div class="col border-0 p-2">
                         <ng-container [ngSwitch]="unit.role">
                             <span *ngSwitchCase="'HQ'" class="icon text-center"><i class="fas fa-skull"></i></span>
@@ -37,7 +37,7 @@
                         {{unit.name}}
                         <span class="float-end">{{calculatePoints(unit)}}</span>
                     </div>
-                    <div class="col-1 border-0 py-1 px-2 text-end add" (click)="addUnit(detachment, unit); setDetachmentIndex(index); $event.stopPropagation()">
+                    <div class="col-1 border-0 py-1 px-2 text-end add" (click)="addUnit(detachment, unit); $event.stopPropagation()">
                         <i class="fas fa-plus"></i>
                     </div>
                 </div>
@@ -62,12 +62,12 @@
                 <div class="detachment rounded-3 border border-1 border-grey mb-2">
                     <div class="row g-0">
                         <div class="col p-2">
-                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.armyType" (ngModelChange)="calculateCP()">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.config" (ngModelChange)="calculateCP()" [compareWith]="compare">
                                 <option *ngFor="let army of core.armies" [ngValue]="army">{{army.name}}</option>
                             </select>
                         </div>
                         <div class="col p-2">
-                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.detachmentType" (ngModelChange)="calculateCP()">
+                            <select class="form-select form-select-lg border-0" [(ngModel)]="detachment.detachmentType" (ngModelChange)="calculateCP()" [compareWith]="compare">
                                 <option *ngFor="let type of core.detachments" [ngValue]="type">{{type.name}}</option>
                             </select>
                         </div>

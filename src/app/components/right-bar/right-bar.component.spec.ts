@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ArmyBarComponent} from './army-bar.component';
+import {RightBarComponent} from './right-bar.component';
 
-describe('ArmyBarComponent', () => {
-    let component: ArmyBarComponent;
-    let fixture: ComponentFixture<ArmyBarComponent>;
+describe('RightBarComponent', () => {
+    let component: RightBarComponent;
+    let fixture: ComponentFixture<RightBarComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ArmyBarComponent]
+            declarations: [RightBarComponent]
         })
             .compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(ArmyBarComponent);
+        fixture = TestBed.createComponent(RightBarComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

@@ -1,3 +1,7 @@
+import {Unit} from "./unit";
+import {BattleSize, DetachmentType} from "./core";
+import {Rule} from "./codex";
+
 export class Army {
     constructor(
         public name: string,
@@ -8,44 +12,29 @@ export class Army {
     ){}
 }
 
-export class BattleSize {
-    constructor(
-        public name: string,
-        public commandPoints: number,
-        public points: number
-    ){}
-}
-
 export class Detachment {
     constructor(
-        public armyType: ArmyType,
+        public uuid: string,
+        public config: Config,
         public detachmentType: DetachmentType,
         public units: Unit[]
     ){}
 }
 
-export class ArmyType {
+export class Config {
     constructor(
         public name: string,
-        public faction: string,
+        public superFaction: string,
+        public subFaction: SubFaction,
         public fileName: string
     ){}
 }
 
-export class DetachmentType {
+export class SubFaction {
     constructor(
         public name: string,
-        public subFaction: string,
-        public cost: number
-    ){}
-}
-
-export class Unit {
-    constructor(
-        public id: number,
-        public uuid: number,
-        public name: string,
-        public role: string,
-        public listPoints: number
+        public psychicPower?: Rule,
+        public trait?: Rule,
+        public relic?: Rule
     ){}
 }

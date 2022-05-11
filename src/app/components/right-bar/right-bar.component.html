@@ -1,5 +1,5 @@
-<nav *ngIf="army" id="army-bar">
-    <div class="position-fixed army-bar">
+<nav *ngIf="army" id="right-bar">
+    <div class="position-fixed right-bar">
         <div class="row border-0 g-0">
             <div class="col">
                 <h3 class="p-3 mb-0">{{army.name}}</h3>
@@ -12,10 +12,10 @@
             </div>
         </div>
 
-        <ng-container *ngFor="let detachment of army.detachments">
+        <ng-container *ngFor="let detachment of army.detachments; let d = index">
             <div class="row detachment border-0 g-0">
                 <div class="col-6">
-                    <h3 class="p-3 mb-0">{{detachment.armyType.name}} <span class="ps-1">{{detachment.detachmentType.name}}</span></h3>
+                    <h3 class="p-3 mb-0">{{detachment.config.name}} <span class="ps-1">{{detachment.detachmentType.name}}</span></h3>
                 </div>
                 <div class="col-6 text-end">
                     <h3 class="p-3 mb-0">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="row g-0 m-3">
-                <div class="col-4" (click)="openModal('faction-modal')">
+                <div class="col-4" (click)="openModal('faction-modal-' + detachment.uuid)">
                     <div class="unit m-3">
                         <div class="unit-title p-2">
                             <h4 class="m-0">
@@ -37,7 +37,27 @@
                         <div class="unit-description px-2 pt-2">
                             <div class="">
                                 <div class="item">
-                                    <div class="cell-count cell d-block px-2">Cult of Magic</div>
+                                    <div class="cell-count cell d-block px-2">{{detachment.config.subFaction?.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" (click)="openModal('stratagem-modal-' + detachment.uuid)">
+                    <div class="unit m-3">
+                        <div class="unit-title p-2">
+                            <h4 class="m-0">
+                                <span class="icon text-center"><i class="fas fa-table"></i></span>
+                                Stratagems
+                            </h4>
+                        </div>
+                        <div class="unit-description px-2 pt-2">
+                            <div class="">
+                                <div class="item">
+                                    <div class="cell-count px-2 text-center col-2">
+                                        1CP
+                                    </div>
+                                    <div class="cell px-2 col-10">Sorcerous Arcana</div>
                                 </div>
                             </div>
                         </div>
@@ -155,17 +175,109 @@
                     </div>
                 </div>
             </div>
+
+            <div *ngIf="(detachment.units | unitType:'LORD OF WAR').length" class="row g-0 m-3">
+                <div class="row g-0">
+                    <div class="col-6">
+                        <h3 class="m-0">LORDS OF WAR</h3>
+                    </div>
+                    <div class="col-6 text-end">
+                        <!--                        <h3 class="m-0"><span class="green">{{calculateMultipleUnitsPointsCost(detachment.units | unitType:'TROOPS')}}</span></h3>-->
+                    </div>
+                </div>
+                <div *ngFor="let unit of detachment.units | unitType:'LORD OF WAR' | alphabetical:'id'; let i = index" class="col-4" [class.active]="activeUnit?.uuid === unit?.uuid" (click)="setActiveUnit(unit)">
+                    <div class="unit m-3">
+                        <div class="unit-title p-2">
+                            <h4 class="title m-0">
+                                <span class="icon text-center"><i class="fas fa-play"></i></span>
+                                {{unit.name}}
+                            </h4>
+                            <button class="border-0 px-3 text-end clone" (click)="addUnit(detachment, unit, i)">
+                                <i class="fas fa-clone"></i>
+                            </button>
+                            <button class="border-0 px-3 text-end delete" (click)="removeUnit(detachment, unit); $event.stopPropagation()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="unit-description px-2 pt-2">
+                            <ng-container *ngFor="let weapon of filterWeaponDuplicates(unit?.models)">
+                                <div class="pb-2">
+                                    <div class="item row">
+                                        <div class="cell-count px-2 text-center col-2">
+                                            {{weaponsCount(unit, weapon)}}
+                                        </div>
+                                        <div class="cell px-2 col-8">
+                                            {{weapon}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngFor="let wargear of unit.wargear">
+                                <ng-container *ngIf="wargear.selectedOption.name !== '-'">
+                                    <div class="pb-2">
+                                        <div class="item row">
+                                            <div class="cell-count px-2 text-center col-2">1</div>
+                                            <div class="cell px-2 col-8">
+                                                {{wargear.selectedOption.name}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                            <div class="points p-2 mx-1">{{calculateUnitPoints(unit)}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FACTION MODAL -->
+            <app-modal id="faction-modal-{{detachment.uuid}}" class="modal" [size]="'xl'">
+                <div header><h3 class="mb-0">Sub Faction<span class="px-2"></span></h3></div>
+                <div body>
+                    <div class="row">
+                        <ng-container *ngFor="let subFaction of findCodex(detachment.config.name)?.subFactions" (click)="detachment.config.subFaction = subFaction">
+                            <div class="col">
+                                <div class="sub-faction text-center rounded-3 m-3 p-3" placement="bottom" [ngbTooltip]="tipContent">
+                                    {{subFaction.name}}
+                                </div>
+                                <ng-template #tipContent>
+                                    <div class="text-start">
+                                        <ng-container *ngIf="subFaction.psychicPower">
+                                            <p><b>PSYCHIC POWER: {{subFaction.psychicPower.name}}</b></p>
+                                            <p>{{subFaction.psychicPower.rule}}</p>
+                                        </ng-container>
+                                        <ng-container *ngIf="subFaction.trait">
+                                            <p><b>TRAIT: {{subFaction.trait.name}}</b></p>
+                                            <p>{{subFaction.trait.rule}}</p>
+                                        </ng-container>
+                                        <ng-container *ngIf="subFaction.relic">
+                                            <p><b>RELIC: {{subFaction.relic.name}}</b></p>
+                                            <p>{{subFaction.relic.rule}}</p>
+                                        </ng-container>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div footer>
+                    <button type="button" class="btn accept" (click)="closeModal('faction-modal-' + detachment.uuid)">CLOSE</button>
+                </div>
+            </app-modal>
+
+            <!-- STRATAGEM MODAL -->
+            <app-modal id="stratagem-modal-{{detachment.uuid}}" class="modal">
+                <div header><h3 class="mb-0">Sub Faction<span class="px-2"></span></h3></div>
+                <div body>
+                    <p>STRATAGEMS</p>
+                </div>
+                <div footer>
+                    <button type="button" class="btn accept" (click)="closeModal('stratagem-modal-' + detachment.uuid)">CLOSE</button>
+                </div>
+            </app-modal>
+
         </ng-container>
     </div>
 </nav>
 
-<!-- FACTION MODAL -->
-<app-modal id="faction-modal" class="modal">
-    <div header><h3 class="mb-0">Sub Faction<span class="px-2"></span></h3></div>
-    <div body>
-        <p>test</p>
-    </div>
-    <div footer>
-        <button type="button" class="btn accept" (click)="closeModal('faction-modal')">CANCEL</button>
-    </div>
-</app-modal>
+

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CodexBarComponent } from './codex-bar.component';
+import { LeftBarComponent } from './left-bar.component';
 
-describe('CodexBarComponent', () => {
-  let component: CodexBarComponent;
-  let fixture: ComponentFixture<CodexBarComponent>;
+describe('LeftBarComponent', () => {
+  let component: LeftBarComponent;
+  let fixture: ComponentFixture<LeftBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CodexBarComponent ]
+      declarations: [ LeftBarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CodexBarComponent);
+    fixture = TestBed.createComponent(LeftBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,11 +1,6 @@
 @import '~src/styles.scss';
 
 div#unitView {
-    margin-left: 32rem;
-    margin-right: calc(50vw - 16rem);
-    margin-top: 4rem;
-    height: calc(100vh - 8rem);
-
     div {
         &.w-80r {
             max-width: 80rem;

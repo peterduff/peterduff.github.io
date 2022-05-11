@@ -21,10 +21,7 @@
         <div class="col text-end">
             <h1 class="mb-0">{{activeUnit.power}}<span class="ps-2">POWER</span></h1>
         </div>
-        <div class="col text-end">
-            <button class="btn add" (click)="addUnit(army.detachments[detachmentIndex], activeUnit)">ADD</button>
-        </div>
-
+        <div class="col text-end"></div>
     </div>
     <div class="row g-0 m-auto p-3 w-80r">
         <table class="table table-bordered">
@@ -79,26 +76,26 @@
             </thead>
             <tbody>
             <ng-container *ngFor="let id of activeUnit.weapons; let odd = odd">
-                <tr *ngIf="!weapon(activeUnit.codex, id).profile" [class.odd]="odd" class="text-center">
-                    <td class="text-start">{{weapon(activeUnit.codex, id).name}}</td>
-                    <td>{{weapon(activeUnit.codex, id).range === 0 ? 'Melee' : weapon(activeUnit.codex, id).range + '"'}}</td>
-                    <td>{{weapon(activeUnit.codex, id).type}}</td>
-                    <td>{{weapon(activeUnit.codex, id).strength}}</td>
-                    <td>{{weapon(activeUnit.codex, id).armourPiercing}}</td>
-                    <td>{{weapon(activeUnit.codex, id).damage}}</td>
-                    <td class="text-start">{{weapon(activeUnit.codex, id).abilities}}</td>
+                <tr *ngIf="!getWeaponProfile(activeUnit.codex, id).profile" [class.odd]="odd" class="text-center">
+                    <td class="text-start">{{getWeaponProfile(activeUnit.codex, id).name}}</td>
+                    <td>{{getWeaponProfile(activeUnit.codex, id).range === 0 ? 'Melee' : getWeaponProfile(activeUnit.codex, id).range + '"'}}</td>
+                    <td>{{getWeaponProfile(activeUnit.codex, id).type}}</td>
+                    <td>{{getWeaponProfile(activeUnit.codex, id).strength}}</td>
+                    <td>{{getWeaponProfile(activeUnit.codex, id).armorPenetration}}</td>
+                    <td>{{getWeaponProfile(activeUnit.codex, id).damage}}</td>
+                    <td class="text-start">{{getWeaponProfile(activeUnit.codex, id).abilities}}</td>
                 </tr>
-                <ng-container *ngIf="weapon(activeUnit.codex, id).profile">
+                <ng-container *ngIf="getWeaponProfile(activeUnit.codex, id).profile">
                     <tr [class.odd]="odd" class="text-center">
-                        <td class="text-start">{{weapon(activeUnit.codex, id).name}}</td>
-                        <td colspan="6">{{weapon(activeUnit.codex, id).description}}</td>
+                        <td class="text-start">{{getWeaponProfile(activeUnit.codex, id).name}}</td>
+                        <td colspan="6">{{getWeaponProfile(activeUnit.codex, id).description}}</td>
                     </tr>
-                    <tr *ngFor="let profile of weapon(activeUnit.codex, id).profile" [class.odd]="odd" class="text-center">
+                    <tr *ngFor="let profile of getWeaponProfile(activeUnit.codex, id).profile" [class.odd]="odd" class="text-center">
                         <td class="text-start">{{profile.name}}</td>
                         <td>{{profile.range === 0 ? 'Melee' : profile.range + '"'}}</td>
                         <td>{{profile.type}}</td>
                         <td>{{profile.strength}}</td>
-                        <td>{{profile.armourPiercing}}</td>
+                        <td>{{profile.armorPenetration}}</td>
                         <td>{{profile.damage}}</td>
                         <td class="text-start">{{profile.abilities}}</td>
                     </tr>
